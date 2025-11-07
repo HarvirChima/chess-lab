@@ -12,6 +12,19 @@ This is an **interactive learning project** perfect for:
 
 **No prior chess programming experience needed!** This lab will guide you through everything step by step.
 
+### 🎓 The Lab Experience
+
+This repository contains a **complete 6-part hands-on lab** (2.5 hours total):
+
+1. **Lab 1 (15 min)**: Ask Mode - Query code with natural language
+2. **Lab 2 (20 min)**: Copilot Instructions - Customize AI behavior
+3. **Lab 3 (25 min)**: Agent Mode - Let AI fix bugs autonomously
+4. **Lab 4 (20 min)**: Prompt Files - Create reusable AI prompts
+5. **Lab 5 (25 min)**: Custom Chat - Build specialized AI assistants
+6. **Lab 6 (30 min)**: Advanced - Master prompt engineering & TDD
+
+Each lab includes step-by-step instructions, example prompts, and hands-on exercises.
+
 ## 📚 Documentation Quick Links
 
 ### For Learning GitHub Copilot (Start Here! 🎓)
