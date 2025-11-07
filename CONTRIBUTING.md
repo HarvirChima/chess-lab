@@ -303,7 +303,7 @@ bool Board::isSafeMove(Position from, Position to) {
 
 When adding features, update:
 - `README.md` - If user-facing feature
-- `QUICKSTART.md` - If changes quick start process
+- `GET_STARTED.md` - If changes setup or quick start process
 - Code comments - Always
 - Test documentation - For test additions
 
@@ -380,6 +380,21 @@ Contributors are acknowledged in:
 - Welcome newcomers and help them learn
 - Focus on the code, not the person
 - Remember: everyone is here to learn!
+
+## 🎓 Teaching & Workshop Contributions
+
+Want to teach this lab or run a workshop? We'd love to hear about it!
+
+**Share your experience:**
+- Open a Discussion to share how you used the lab
+- Report any issues students encountered
+- Suggest improvements to the lab exercises
+- Share your class structure or timeline
+
+**Creating educational content:**
+- You're welcome to use this lab in courses and workshops
+- Attribution appreciated (link back to this repo)
+- If you create supplementary materials, consider contributing them back
 
 ## 📄 License
 

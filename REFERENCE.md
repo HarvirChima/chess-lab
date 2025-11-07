@@ -132,8 +132,9 @@ make             # Build fresh
 
 ## 🔗 Quick Links
 
+- **Get Started**: [GET_STARTED.md](GET_STARTED.md)
 - **Full Guide**: [README.md](README.md)
-- **Quick Start**: [QUICKSTART.md](QUICKSTART.md)
+- **Lab Exercises**: [LAB_GUIDE.md](LAB_GUIDE.md)
 - **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Project Info**: [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)
 

@@ -11,8 +11,9 @@ echo ""
 echo "📁 Checking lab files..."
 
 required_files=(
+    "GET_STARTED.md"
     "LAB_GUIDE.md"
-    "QUICKSTART_LAB.md"
+    "INSTRUCTOR_GUIDE.md"
     ".github/copilot-instructions.md"
     ".github/chess-test.prompt.md"
     ".github/copilot-chat-participants.json"
@@ -80,8 +81,8 @@ if [ "$all_files_exist" = true ]; then
     echo ""
     echo "📖 Next steps:"
     echo "   1. Open VS Code in this directory"
-    echo "   2. Open LAB_GUIDE.md"
-    echo "   3. Start with Lab 1!"
+    echo "   2. Open GET_STARTED.md to choose your path"
+    echo "   3. Follow either Path A (Labs) or Path B (Play)"
     exit 0
 else
     echo "❌ Some files are missing. Please check the setup."

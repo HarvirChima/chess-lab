@@ -1,594 +1,122 @@
 # Chess Lab 🎮♟️
 
-A beginner-friendly C++ chess game application with a full visual display, designed as a hands-on lab for learning GitHub Copilot and C++ programming.
+A beginner-friendly C++ chess game application designed as a hands-on lab for learning GitHub Copilot and C++ programming.
+
+## 🚀 Quick Start
+
+**Choose your path:**
+
+| I want to... | Start here |
+|--------------|------------|
+| 🎓 **Learn GitHub Copilot** | [GET_STARTED.md](GET_STARTED.md) → Path A |
+| ♟️ **Play chess now** | [GET_STARTED.md](GET_STARTED.md) → Path B |
+| 🤝 **Contribute code** | [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 ## 🎯 What is This Lab?
 
-This is an **interactive learning project** perfect for:
-- **Complete beginners** learning to code with AI assistance
-- **Developers** exploring GitHub Copilot's capabilities
-- **Students** learning C++ and game development
-- **Anyone** wanting hands-on experience with AI-assisted coding
+An **interactive learning project** perfect for:
+- 🆕 **Complete beginners** learning to code with AI assistance
+- 💻 **Developers** exploring GitHub Copilot capabilities
+- 🎓 **Students** learning C++ and game development  
+- 🤖 **Anyone** wanting hands-on AI-assisted coding experience
 
-**No prior chess programming experience needed!** This lab will guide you through everything step by step.
+**No prior chess programming experience needed!** Everything is explained step by step.
 
-### 🎓 The Lab Experience
+## 🎓 The Lab Experience
 
-This repository contains a **complete 6-part hands-on lab** (2.5 hours total):
+**6-part hands-on lab (2.5 hours total):**
 
-1. **Lab 1 (15 min)**: Ask Mode - Query code with natural language
+1. **Lab 1 (15 min)**: Ask Mode - Query code naturally
 2. **Lab 2 (20 min)**: Copilot Instructions - Customize AI behavior
-3. **Lab 3 (25 min)**: Agent Mode - Let AI fix bugs autonomously
-4. **Lab 4 (20 min)**: Prompt Files - Create reusable AI prompts
+3. **Lab 3 (25 min)**: Agent Mode - Fix bugs autonomously
+4. **Lab 4 (20 min)**: Prompt Files - Create reusable prompts
 5. **Lab 5 (25 min)**: Custom Chat - Build specialized AI assistants
-6. **Lab 6 (30 min)**: Advanced - Master prompt engineering & TDD
+6. **Lab 6 (30 min)**: Advanced - Master best practices
 
-Each lab includes step-by-step instructions, example prompts, and hands-on exercises.
+**→ Start learning:** [GET_STARTED.md](GET_STARTED.md)
 
-## 📚 Documentation Quick Links
+## 📚 Documentation Hub
 
-### For Learning GitHub Copilot (Start Here! 🎓)
-- 🎓 **[LAB_GUIDE.md](LAB_GUIDE.md)** - Complete 6-part Copilot lab with exercises
-- 🚀 **[QUICKSTART_LAB.md](QUICKSTART_LAB.md)** - Get started with labs in 5 minutes
+### 🎓 For Students & Learners
+- **[GET_STARTED.md](GET_STARTED.md)** - Start here! Choose your path (Learning or Playing)
+- **[LAB_GUIDE.md](LAB_GUIDE.md)** - Complete lab exercises (6 parts, 2.5 hours)
+- **[REFERENCE.md](REFERENCE.md)** - Quick reference card for commands
+- **[BUG_GUIDE.md](BUG_GUIDE.md)** - Details on intentional bugs (for Lab 3)
 
-### For Using the Chess Game
-- 📖 **[QUICKSTART.md](QUICKSTART.md)** - Get the game running quickly
-- 📋 **[REFERENCE.md](REFERENCE.md)** - Quick reference card for commands and controls  
+### 🤝 For Contributors & Teachers
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute code or improvements
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Technical architecture details
 
-### For Contributors & Technical Details
-- 🤝 **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guide for contributors
-- 📊 **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Technical project overview
-- 🎬 **[demo.sh](demo.sh)** - Interactive guided demo script
-
-**New to GitHub Copilot?** Start with [LAB_GUIDE.md](LAB_GUIDE.md) for hands-on exercises!  
-**Just want to play chess?** Jump to [QUICKSTART.md](QUICKSTART.md)!
+**Teaching this lab?** See the [Teaching Tips](#-teaching-tips) section below.
 
 ## ✨ Features
 
-- ✅ Complete chess game implementation with standard rules
+- ✅ Complete chess game with standard rules
 - ✅ Beautiful terminal display with Unicode chess pieces (♔♕♖♗♘♙)
-- ✅ Elegant box-drawing borders and colored squares
 - ✅ Interactive gameplay with arrow key navigation
-- ✅ Turn-based play for White and Black players
-- ✅ Move validation and piece movement rules
-- ✅ Color-coded pieces for easy identification
-- ✅ Unit tests to verify your code works
-- ✅ Demo tools to explore the board
+- ✅ Move validation and turn-based play
+- ✅ Unit tests and demo tools
+- ✅ Comprehensive learning labs for GitHub Copilot
 
-## 🚀 Quick Start (For Impatient Learners!)
+## 🎮 Game Controls
 
-If you just want to see it run quickly, follow [QUICKSTART.md](QUICKSTART.md).
+| Key | Action |
+|-----|--------|
+| ↑ ↓ ← → | Move cursor |
+| SPACE | Select piece / Move piece |
+| Q | Quit |
 
-## 📋 Prerequisites
+**Your first move:** Use arrows → `e2` → SPACE → `e4` → SPACE
 
-Before you start, make sure you have these tools installed:
-
-### Required Software
-
-1. **A C++ Compiler** - This converts your code into a runnable program
-   - On Linux/macOS: Usually pre-installed (GCC or Clang)
-   - On Windows: Install MinGW or use WSL (Windows Subsystem for Linux)
-
-2. **CMake** - A build system that manages the compilation process
-   - Version 3.10 or higher required
-
-3. **ncurses library** - Enables the visual terminal display
-   - This creates the nice-looking chess board in your terminal
-
-### Installing Everything You Need
-
-Choose your operating system:
-
-#### **Ubuntu/Debian Linux** 🐧
-```bash
-# Update package list
-sudo apt-get update
-
-# Install all required tools
-sudo apt-get install libncurses5-dev libncursesw5-dev cmake g++ git
-```
-
-#### **macOS** 🍎
-```bash
-# First, install Homebrew if you haven't already
-# Visit https://brew.sh for instructions
-
-# Then install required packages
-brew install ncurses cmake git
-```
-
-#### **Fedora/RHEL Linux** 🎩
-```bash
-# Install all required tools
-sudo dnf install ncurses-devel cmake gcc-c++ git
-```
-
-#### **Windows** 🪟
-The easiest way is to use WSL (Windows Subsystem for Linux):
-1. Install WSL following [Microsoft's guide](https://learn.microsoft.com/en-us/windows/wsl/install)
-2. Once in WSL, follow the Ubuntu/Debian instructions above
-
-### ✅ Verify Your Setup
-
-Run these commands to check everything is installed:
-
-```bash
-# Check C++ compiler
-g++ --version
-# Expected: Should show version 7.0 or higher
-
-# Check CMake
-cmake --version
-# Expected: Should show version 3.10 or higher
-
-# Check git
-git --version
-# Expected: Any recent version is fine
-```
-
-If all commands show version numbers, you're ready to proceed! 🎉
-
-## 📥 Getting the Code
-
-### Option 1: Download ZIP (Recommended)
-
-1. Visit the repository on GitHub: https://github.com/HarvirChima/chess-lab
-2. Click the green "Code" button
-3. Select "Download ZIP"
-4. Extract the ZIP file to your preferred location (e.g., `~/projects/chess-lab`)
-5. Open the extracted folder in VS Code or your preferred editor
-
-**To open in VS Code:**
-```bash
-# Navigate to the extracted folder
-cd ~/projects/chess-lab  # or wherever you extracted it
-
-# Open in VS Code
-code .
-```
-
-### Option 2: Clone with Git (Alternative)
-
-If you prefer using Git:
-
-```bash
-# Navigate to where you want to store the project
-cd ~/projects  # or any directory you prefer
-
-# Clone the repository
-git clone https://github.com/HarvirChima/chess-lab.git
-
-# Enter the project directory
-cd chess-lab
-```
-
-## 🔨 Building the Project
-
-Building means converting the human-readable C++ code into executable programs your computer can run.
-
-### Step-by-Step Build Instructions
-
-```bash
-# 1. Make sure you're in the chess-lab directory
-cd chess-lab  # if not already there
-
-# 2. Create a build directory (keeps build files separate from source code)
-mkdir build
-
-# 3. Navigate into the build directory
-cd build
-
-# 4. Configure the project with CMake
-#    This checks your system and prepares for building
-cmake ..
-
-# 5. Build all executables
-#    This compiles the code into runnable programs
-make
-```
-
-**What you should see:**
-```
--- The C compiler identification is GNU ...
--- The CXX compiler identification is GNU ...
--- Configuring done
--- Generating done
--- Build files have been written to: ...
-[ 14%] Building CXX object ...
-[ 28%] Building CXX object ...
-...
-[100%] Built target chess
-```
-
-**If successful**, you'll now have three executable programs in your `build` directory:
-- `chess` - The main game
-- `test_chess` - Unit tests
-- `demo_board` - A demo visualization tool
-
-## 🎮 Running the Game
-
-### First, Run the Tests
-
-Before playing, verify everything works correctly:
-
-```bash
-# Make sure you're in the build directory
-cd build  # if not already there
-
-# Run the test suite
-./test_chess
-```
-
-**Expected output:**
-```
-Running Chess Lab Tests...
-=========================
-✓ Piece creation test passed
-✓ Board initialization test passed
-✓ Pawn movement test passed
-✓ Knight movement test passed
-✓ Invalid move test passed
-✓ Capture test passed
-=========================
-All tests passed! ✓
-```
-
-If you see "All tests passed!", you're ready to play! 🎉
-
-### View the Demo
-
-Want to see what the board looks like first?
-
-```bash
-# Run the demo viewer
-./demo_board
-```
-
-This shows you the initial chess board layout and an example position after a few moves.
-
-### Play the Game!
-
-```bash
-# Start the chess game
-./chess
-```
-
-**What you'll see:**
-- A chess board with pieces displayed in your terminal
-- A cursor you can move with arrow keys
-- Status messages at the bottom
-- Current player's turn indicated
-
-## 🎯 How to Play
-
-### Game Controls (Keyboard)
-
-| Key | What It Does |
-|-----|-------------|
-| **↑ (Up Arrow)** | Move cursor up on the board |
-| **↓ (Down Arrow)** | Move cursor down on the board |
-| **← (Left Arrow)** | Move cursor left on the board |
-| **→ (Right Arrow)** | Move cursor right on the board |
-| **SPACE** | Select a piece OR move selected piece to cursor position |
-| **Q** | Quit the game |
-
-### Understanding the Board
-
-**Piece Symbols:**
-- **White pieces** (you move first): Beautiful Unicode symbols
-  - `♔` = King
-  - `♕` = Queen
-  - `♖` = Rook (castle)
-  - `♗` = Bishop
-  - `♘` = Knight (the horse)
-  - `♙` = Pawn
-
-- **Black pieces**: Filled Unicode symbols
-  - `♚` = king
-  - `♛` = queen
-  - `♜` = rook
-  - `♝` = bishop
-  - `♞` = knight
-  - `♟` = pawn
-
-- **Empty squares**: Light squares (   ) or dark squares (░)
-
-### Your First Game - Step by Step
-
-Let's make your first move! Here's the classic "King's Pawn Opening":
-
-1. **Start the game**
-   ```bash
-   ./chess
-   ```
-
-2. **You'll see the board** with White pieces at the bottom (rows 1-2) and Black pieces at the top (rows 7-8)
-
-3. **Make your first move** (White always goes first):
-   - Use arrow keys to move cursor to **e2** (the pawn in front of the white king)
-   - Press **SPACE** to select it (the piece should be highlighted)
-   - Use arrow keys to move cursor to **e4** (two squares forward)
-   - Press **SPACE** to move the pawn there
-
-4. **Black's turn** (if playing with a friend):
-   - Move to **e7** (black pawn)
-   - Press **SPACE** to select
-   - Move to **e5**
-   - Press **SPACE** to move
-
-5. **Continue playing** back and forth!
-
-### Game Rules Reminder
-
-- **White** pieces move first
-- Players alternate turns (White, then Black, then White, etc.)
-- Select your own pieces (White selects White, Black selects Black)
-- You can only make **valid chess moves** - the game won't let you cheat!
-- **Capture** enemy pieces by moving to their square
-
-### Tips for New Chess Players
-
-- **Pawns** move forward one square (or two on their first move)
-- **Knights** move in an "L" shape (2 squares + 1 square perpendicular)
-- **Bishops** move diagonally any number of squares
-- **Rooks** move horizontally or vertically any number of squares
-- **Queens** combine rook and bishop movement (most powerful!)
-- **Kings** move one square in any direction
-
-Don't worry about memorizing everything - just experiment and learn as you play!
-
-## 🤖 Learning with GitHub Copilot
-
-This project is **specifically designed** to help you learn AI-assisted programming with GitHub Copilot!
-
-### What is GitHub Copilot?
-
-GitHub Copilot is an AI pair programmer that helps you write code by:
-- Suggesting code completions as you type
-- Generating entire functions from comments
-- Helping you understand existing code
-- Suggesting fixes for bugs
-- Writing tests automatically
-
-### Lab Exercises with Copilot
-
-Here are hands-on exercises to try with GitHub Copilot:
-
-#### **Exercise 1: Code Understanding (Beginner)**
-1. Open `src/Board.cpp` in VS Code (with Copilot enabled)
-2. Hover over functions to see what they do
-3. Use Copilot Chat to ask: "Explain what the `isValidMove` function does"
-4. Try to understand the piece movement logic
-
-#### **Exercise 2: Add Comments (Beginner)**
-1. Open `src/Game.cpp`
-2. Place your cursor above a function
-3. Type `//` and let Copilot suggest a comment
-4. Practice having Copilot document the code for you
-
-#### **Exercise 3: Write a New Test (Intermediate)**
-1. Open `src/test_chess.cpp`
-2. At the end, start typing a new test function:
-   ```cpp
-   void testRookMovement() {
-       // Test that a rook can move horizontally
-   ```
-3. Let Copilot complete the test for you
-4. Review and run it with `./test_chess`
-
-#### **Exercise 4: Add a Feature - Check Detection (Advanced)**
-1. Create a comment in `src/Board.h`:
-   ```cpp
-   // Function to check if a king is in check
-   bool isKingInCheck(Color color);
-   ```
-2. Let Copilot suggest the implementation
-3. Add the implementation to `src/Board.cpp`
-4. Test your new feature!
-
-#### **Exercise 5: Add Move History (Advanced)**
-1. In `src/Game.h`, add:
-   ```cpp
-   // Vector to store move history
-   ```
-2. Let Copilot suggest the data structure
-3. Implement functions to track and display moves
-4. Use Copilot to help with the implementation
-
-### Copilot Tips for This Lab
-
-**Good prompts to try:**
-- "Add a function to detect checkmate"
-- "Implement castling for the king and rook"
-- "Create a function to save the game state to a file"
-- "Add pawn promotion when a pawn reaches the opposite end"
-- "Write a test for bishop diagonal movement"
-
-**How to get better suggestions:**
-1. Write clear, descriptive comments first
-2. Use meaningful variable and function names
-3. Look at existing code patterns in the project
-4. Review Copilot's suggestions - don't just accept blindly!
-5. Test your code frequently
-
-## 🔧 Troubleshooting
-
-### Problem: "cmake: command not found"
-
-**Solution:** CMake is not installed.
-```bash
-# Ubuntu/Debian
-sudo apt-get install cmake
-
-# macOS
-brew install cmake
-```
-
-### Problem: "ncurses.h: No such file or directory"
-
-**Solution:** ncurses library is not installed.
-```bash
-# Ubuntu/Debian
-sudo apt-get install libncurses5-dev libncursesw5-dev
-
-# macOS
-brew install ncurses
-```
-
-### Problem: "make: command not found"
-
-**Solution:** Build tools are not installed.
-```bash
-# Ubuntu/Debian
-sudo apt-get install build-essential
-
-# macOS (installs with Xcode command line tools)
-xcode-select --install
-```
-
-### Problem: Build fails with compiler errors
-
-**Solution:** Make sure you have a C++17 compatible compiler.
-```bash
-# Check your compiler version
-g++ --version
-
-# Should be GCC 7+ or Clang 5+
-# If older, update your compiler:
-sudo apt-get update
-sudo apt-get upgrade g++
-```
-
-### Problem: Game displays incorrectly or has weird characters
-
-**Solution:** Terminal doesn't support ncurses properly.
-- Try a different terminal emulator (e.g., GNOME Terminal, iTerm2, Windows Terminal)
-- Make sure your terminal size is at least 80x24 characters
-- Check that your `TERM` environment variable is set: `echo $TERM`
-
-### Problem: Can't see the cursor or pieces are hard to distinguish
-
-**Solution:** Adjust your terminal colors or theme.
-- Try a light-colored terminal theme
-- Increase font size for better visibility
-- Some terminals work better than others with ncurses
-
-### Still Having Issues?
-
-1. **Check the build output carefully** - error messages usually tell you what's wrong
-2. **Make sure you're in the right directory** - commands should be run from `build/`
-3. **Clean and rebuild**:
-   ```bash
-   cd build
-   rm -rf *
-   cmake ..
-   make
-   ```
-4. **Search for your error message online** - Stack Overflow often has solutions
-5. **Check the project's GitHub Issues** - others may have had the same problem
+**Full instructions:** See [GET_STARTED.md](GET_STARTED.md)
 
 ## 📁 Project Structure
 
-Understanding what each file does:
-
 ```
 chess-lab/
-├── CMakeLists.txt          # Build configuration (tells CMake how to build)
-├── README.md               # This file - your main guide
-├── QUICKSTART.md          # Fast-track instructions
-├── PROJECT_SUMMARY.md     # Technical overview
-├── demo.sh                # Demo script
-├── .gitignore             # Tells git which files to ignore
+├── GET_STARTED.md         # ← Start here!
+├── README.md              # ← You are here
+├── LAB_GUIDE.md           # Complete lab exercises
+├── INSTRUCTOR_GUIDE.md    # For instructors
+├── CONTRIBUTING.md        # Contribution guide
+├── REFERENCE.md           # Quick reference
 │
-├── include/               # Header files (.h) - declarations
-│   ├── Board.h           # Chess board class declaration
-│   ├── Piece.h           # Chess piece class declaration
-│   ├── Game.h            # Game controller class declaration
-│   └── Display.h         # Visual display class declaration
+├── include/               # Header files
+│   ├── Board.h           # Board class
+│   ├── Piece.h           # Piece class
+│   ├── Game.h            # Game class
+│   └── Display.h         # Display class
 │
-└── src/                   # Source files (.cpp) - implementations
-    ├── main.cpp          # Program entry point - starts the game
-    ├── Board.cpp         # Board logic (move validation, etc.)
-    ├── Piece.cpp         # Piece definitions (colors, types)
-    ├── Game.cpp          # Game flow (turns, user input)
-    ├── Display.cpp       # Display rendering (ncurses drawing)
-    ├── test_chess.cpp    # Unit tests to verify code works
-    └── demo_board.cpp    # Demo board viewer
-
-After building, you'll also see:
-└── build/                 # Build directory (created by you)
-    ├── chess             # Main game executable
-    ├── test_chess        # Test program executable
-    ├── demo_board        # Demo viewer executable
-    └── ...               # Other build artifacts (ignore these)
+└── src/                   # Implementation files
+    ├── main.cpp          # Entry point
+    ├── Board.cpp         # Move validation
+    ├── Game.cpp          # Game loop
+    ├── Display.cpp       # Terminal UI
+    └── test_chess.cpp    # Unit tests
 ```
 
-### What Each File Does
+**Full details:** See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)
 
-**Header files (.h):**
-- Declare classes, functions, and data structures
-- Like a "table of contents" for the code
-- Other files include these to use the functionality
+## 🎓 Learning Paths
 
-**Source files (.cpp):**
-- Contain the actual implementation code
-- Define what the functions declared in headers actually do
+### Beginner Path
+1. ✅ Build and run the game → [GET_STARTED.md](GET_STARTED.md)
+2. Play a complete game
+3. Complete Lab 1 & 2 → [LAB_GUIDE.md](LAB_GUIDE.md)
+4. Try modifying simple messages in code
 
-**CMakeLists.txt:**
-- Configuration file for CMake
-- Lists all source files
-- Specifies dependencies (like ncurses)
-- Tells the build system how to compile everything
+### Intermediate Path
+1. Complete all 6 labs → [LAB_GUIDE.md](LAB_GUIDE.md)
+2. Fix the intentional bugs → [BUG_GUIDE.md](BUG_GUIDE.md)
+3. Add a new feature (move counter, move history)
+4. Write additional unit tests
 
-## 🎓 Next Steps - Keep Learning!
-
-### Beginner Level
-- [ ] Play a complete game with a friend
-- [ ] Read through `src/main.cpp` - it's the simplest file
-- [ ] Use Copilot to add comments to functions you don't understand
-- [ ] Try modifying the starting message in `main.cpp`
-
-### Intermediate Level
-- [ ] Add a new test case in `test_chess.cpp`
-- [ ] Modify the board display colors in `Display.cpp`
-- [ ] Implement a "new game" option to restart without quitting
-- [ ] Add a move counter to track how many moves have been made
-
-### Advanced Level
-- [ ] Implement check detection
-- [ ] Add castling support
-- [ ] Implement en passant captures
-- [ ] Add pawn promotion
-- [ ] Implement checkmate detection
-- [ ] Create an AI opponent (start simple - random moves!)
-- [ ] Add save/load game functionality
-- [ ] Implement move notation (algebraic notation)
-
-### Using This with GitHub Copilot
-
-**Workflow for adding features:**
-1. **Plan**: Write a comment describing what you want to do
-2. **Generate**: Let Copilot suggest the implementation
-3. **Review**: Read the suggested code - does it make sense?
-4. **Test**: Build and test your changes
-5. **Iterate**: Refine based on what works and what doesn't
-
-**Example workflow:**
-```cpp
-// In Board.h, add:
-// TODO: Add function to detect if the king is in check
-
-// In Board.cpp, start typing:
-bool Board::isKingInCheck(Color color) {
-    // Copilot will suggest implementation
-}
-```
-
-## 🌟 Success Stories
-
-**"I had never programmed in C++ before, but with Copilot helping me understand the code and suggest improvements, I added check detection in just 2 hours!"** - Beginner Developer
-
-**"This lab was perfect for learning how AI can assist with coding. I learned both chess programming AND how to effectively use Copilot."** - Student
+### Advanced Path
+1. Implement missing chess features (castling, en passant, promotion)
+2. Add check and checkmate detection
+3. Create an AI opponent
+4. Build a graphical interface
+5. Contribute back → [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 🤝 Contributing
 
@@ -596,54 +124,115 @@ Want to improve this lab?
 - Fix bugs you find
 - Add more exercises
 - Improve documentation
-- Share your success stories!
+## 🤝 Contributing
+
+Want to improve this lab? We welcome contributions!
+
+**Ways to contribute:**
+- 🐛 Fix bugs you find
+- ✨ Add new features or exercises
+- 📝 Improve documentation
+- 🎓 Share your success stories
+
+**See [CONTRIBUTING.md](CONTRIBUTING.md) for full guide**
+
+## 👨‍🏫 Teaching Tips
+
+**Using this lab in a classroom or workshop?** Here are some tips:
+
+### Quick Setup for Instructors
+
+1. **Test it yourself first** (1 hour):
+   - Clone the repo and build it: `git clone https://github.com/HarvirChima/chess-lab.git && cd chess-lab && mkdir build && cd build && cmake .. && make`
+   - Run through Lab 1-3 yourself to understand the flow
+   - Try the intentional bugs (see [BUG_GUIDE.md](BUG_GUIDE.md))
+
+2. **Prepare students** (share before class):
+   - Send link to [GET_STARTED.md](GET_STARTED.md)
+   - Students should have tools installed before class
+   - Verify students have GitHub Copilot access
+
+### Suggested Class Structure
+
+**Option 1: 2.5 Hour Workshop**
+- 0:00-0:20: Setup help & introduction
+- 0:20-0:35: Lab 1 (Ask Mode)
+- 0:35-0:55: Lab 2 (Copilot Instructions)
+- 0:55-1:00: Break
+- 1:00-1:25: Lab 3 (Agent Mode - bug fixing)
+- 1:25-1:45: Lab 4 (Prompt Files)
+- 1:45-2:10: Lab 5 (Custom Chat)
+- 2:10-2:30: Lab 6 overview & Q&A
+
+**Option 2: Self-Paced (Homework)**
+- Students work through [LAB_GUIDE.md](LAB_GUIDE.md) at their own pace
+- Provide office hours for questions
+- Expected completion: 2.5-3 hours
+
+### Common Student Issues
+
+**"I can't build the project"**
+- Check they have all prerequisites: `g++ --version`, `cmake --version`
+- Common issue: ncurses not installed
+- Solution: See [GET_STARTED.md](GET_STARTED.md) Installation Guide
+
+**"Copilot isn't working"**
+- Check status bar icon in VS Code (should show checkmark)
+- Try reloading VS Code: `Ctrl+Shift+P` → "Reload Window"
+- Verify subscription at github.com/settings/copilot
+
+**"I don't see the bugs in Lab 3"**
+- The bugs are intentional! Students fix them as part of the lab
+- Tests still pass because tests don't cover the bug cases
+- See [BUG_GUIDE.md](BUG_GUIDE.md) for details
+
+### Assessment Ideas
+
+- Have students fix all intentional bugs
+- Ask them to add a new feature (e.g., move counter, castling)
+- Have them create their own prompt file
+- Ask them to explain 3 Copilot best practices they learned
+
+### Time Estimates
+
+- Building & setup: 5-10 minutes
+- Each lab: 15-30 minutes (as labeled)
+- Total lab time: 2.5 hours
+- Adding a new feature: 30-60 minutes
 
 ## 📚 Additional Resources
 
-**Learning C++:**
+**Learning:**
 - [LearnCpp.com](https://www.learncpp.com/) - Free C++ tutorial
-- [C++ Reference](https://en.cppreference.com/) - Language reference
+- [Chess.com Learn](https://www.chess.com/learn) - Learn chess
+- [Copilot Documentation](https://docs.github.com/en/copilot) - GitHub Copilot docs
 
-**Learning Chess:**
-- [Chess.com Learn](https://www.chess.com/learn) - Free chess lessons
-- [Lichess](https://lichess.org/learn) - Interactive chess tutorials
-
-**GitHub Copilot:**
-- [Copilot Documentation](https://docs.github.com/en/copilot)
-- [Copilot Tips & Tricks](https://github.blog/2023-06-20-how-to-write-better-prompts-for-github-copilot/)
-
-**ncurses Programming:**
-- [NCURSES Programming HOWTO](https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/)
+**Support:**
+- [GitHub Issues](https://github.com/HarvirChima/chess-lab/issues) - Report bugs
+- [Discussions](https://github.com/HarvirChima/chess-lab/discussions) - Ask questions
 
 ## ❓ FAQ
 
-**Q: Do I need to know how to play chess?**
-A: No! Basic rules are included, and you'll learn by playing.
+**Q: Do I need to know chess?**  
+A: No! You'll learn by playing.
 
-**Q: Is this only for beginners?**
-A: No! Beginners can learn the basics, while advanced users can add complex features like AI opponents.
+**Q: Do I need GitHub Copilot?**  
+A: No! The game works without it, but Copilot makes learning easier.
 
-**Q: Do I need GitHub Copilot to use this?**
-A: No! The game works without Copilot. But Copilot makes learning and extending it much easier.
+**Q: How long does the lab take?**  
+A: 5 minutes to build and play. 2.5 hours for complete lab exercises.
 
-**Q: Can I use this for my own project?**
-A: Yes! Feel free to fork, modify, and build upon this code.
+**Q: What if I'm stuck?**  
+A: Check [GET_STARTED.md](GET_STARTED.md) troubleshooting, search online, or open a GitHub issue.
 
-**Q: How long does the lab take?**
-A: 30 minutes to get running and play a game. Hours to days if you want to add new features!
-
-**Q: What if I'm stuck?**
-A: Check the troubleshooting section, search for error messages online, or ask for help in GitHub Issues.
-
-## 📄 License
-
-This project is open source and available for educational purposes.
+**Q: Can I use this for my own project?**  
+A: Yes! This is open source for educational purposes.
 
 ---
 
-**Ready to start?** Jump to the [Prerequisites](#-prerequisites) section and begin your journey! 🚀
+## 🚀 Ready to Begin?
 
-**Questions?** Open an issue on GitHub and we'll help you out.
+**→ [GET_STARTED.md](GET_STARTED.md)** ← Start here!
 
 **Enjoying the lab?** Give it a ⭐ star on GitHub!
 
