@@ -322,6 +322,16 @@ All tests passed! ✓
 
 **Play a few moves to get familiar with the game, then press Q to quit.**
 
+Hot Tip:
+If you are seeing a messed up chess board running wsl on windows:
+
+- Fix for garbled chess pieces in ncurses (Windows/WSL):
+- Three required changes:
+- CMakeLists.txt - Link ncursesw instead of ncurses:
+- Display.h - Use ncursesw header:
+- Display.cpp & main.cpp - Use system locale:
+- Rebuild: cd build && cmake .. && make
+
 ### Step 5: Open in VS Code
 
 ```bash
