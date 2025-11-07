@@ -26,10 +26,10 @@ void Display::initialize() {
         // Color pair 2 is intentionally unused (reserved for future use)
         init_pair(3, COLOR_BLACK, COLOR_WHITE);     // Highlighted square (inverted for subtle effect)
         init_pair(4, COLOR_WHITE, COLOR_BLACK);     // Messages and borders (elegant white)
-        init_pair(5, COLOR_WHITE, COLOR_BLACK);     // White pieces on light squares
-        init_pair(6, COLOR_WHITE, COLOR_BLACK);     // White pieces on dark squares
-        init_pair(7, COLOR_BLACK, COLOR_WHITE);     // Black pieces on light squares
-        init_pair(8, COLOR_BLACK, COLOR_WHITE);     // Black pieces on dark squares
+        init_pair(5, COLOR_BLACK, COLOR_WHITE);     // White pieces on light squares (black text on white bg)
+        init_pair(6, COLOR_WHITE, COLOR_BLACK);     // White pieces on dark squares (white text on black bg)
+        init_pair(7, COLOR_BLACK, COLOR_WHITE);     // Black pieces on light squares (black text on white bg)
+        init_pair(8, COLOR_WHITE, COLOR_BLACK);     // Black pieces on dark squares (white text on black bg)
     }
     
     // Create game window
