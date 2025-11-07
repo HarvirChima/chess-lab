@@ -19,6 +19,7 @@ void Display::initialize() {
         start_color();
         // Define color pairs for a more aesthetic board
         init_pair(1, COLOR_WHITE, COLOR_BLACK);     // General white text
+        // Color pair 2 is intentionally unused (reserved for future use)
         init_pair(3, COLOR_YELLOW, COLOR_BLUE);     // Highlighted square
         init_pair(4, COLOR_GREEN, COLOR_BLACK);     // Messages and borders
         init_pair(5, COLOR_WHITE, COLOR_GREEN);     // White pieces on light squares
