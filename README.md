@@ -12,15 +12,36 @@ This is an **interactive learning project** perfect for:
 
 **No prior chess programming experience needed!** This lab will guide you through everything step by step.
 
+### 🎓 The Lab Experience
+
+This repository contains a **complete 6-part hands-on lab** (2.5 hours total):
+
+1. **Lab 1 (15 min)**: Ask Mode - Query code with natural language
+2. **Lab 2 (20 min)**: Copilot Instructions - Customize AI behavior
+3. **Lab 3 (25 min)**: Agent Mode - Let AI fix bugs autonomously
+4. **Lab 4 (20 min)**: Prompt Files - Create reusable AI prompts
+5. **Lab 5 (25 min)**: Custom Chat - Build specialized AI assistants
+6. **Lab 6 (30 min)**: Advanced - Master prompt engineering & TDD
+
+Each lab includes step-by-step instructions, example prompts, and hands-on exercises.
+
 ## 📚 Documentation Quick Links
 
-- 📖 **[QUICKSTART.md](QUICKSTART.md)** - Get running in 5 minutes
+### For Learning GitHub Copilot (Start Here! 🎓)
+- 🎓 **[LAB_GUIDE.md](LAB_GUIDE.md)** - Complete 6-part Copilot lab with exercises
+- 🚀 **[QUICKSTART_LAB.md](QUICKSTART_LAB.md)** - Get started with labs in 5 minutes
+
+### For Using the Chess Game
+- 📖 **[QUICKSTART.md](QUICKSTART.md)** - Get the game running quickly
 - 📋 **[REFERENCE.md](REFERENCE.md)** - Quick reference card for commands and controls  
+
+### For Contributors & Technical Details
 - 🤝 **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guide for contributors
 - 📊 **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Technical project overview
 - 🎬 **[demo.sh](demo.sh)** - Interactive guided demo script
 
-**New to this?** Start with QUICKSTART.md, then come back here for detailed explanations!
+**New to GitHub Copilot?** Start with [LAB_GUIDE.md](LAB_GUIDE.md) for hands-on exercises!  
+**Just want to play chess?** Jump to [QUICKSTART.md](QUICKSTART.md)!
 
 ## ✨ Features
 

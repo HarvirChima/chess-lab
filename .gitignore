@@ -35,7 +35,7 @@ Makefile
 _codeql_detected_source_root
 
 # IDE
-.vscode/
+# Keep .vscode/ for lab settings
 .idea/
 *.swp
 *.swo

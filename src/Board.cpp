@@ -106,7 +106,8 @@ bool Board::isValidMove(int fromRow, int fromCol, int toRow, int toCol) const {
             int direction = (piece.getColor() == PieceColor::WHITE) ? -1 : 1;
             
             // Forward move
-            if (colDiff == 0 && rowDiff == direction && targetPiece.isEmpty()) {
+            // BUG: Missing direction validation - allows backward movement!
+            if (colDiff == 0 && absRowDiff == 1 && targetPiece.isEmpty()) {
                 return true;
             }
             
