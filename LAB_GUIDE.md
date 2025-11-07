@@ -80,14 +80,13 @@ Homebrew is a **package manager** for macOS. Think of it like an app store for d
    ```
    - If you see a version number, skip to Step 2!
    - If you see "command not found", continue below:
-
-3. **Install Homebrew:**
-   ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-   - Press Enter when prompted
-   - Enter your Mac password (the one you use to log in)
-   - Installation takes 2-5 minutes
+   - If you need to Install Homebrew:
+      ```bash
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      ```
+      - Press Enter when prompted
+      - Enter your Mac password (the one you use to log in)
+      - Installation takes 2-5 minutes
 
 4. **Follow any additional instructions** that appear (like adding Homebrew to your PATH)
 
