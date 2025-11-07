@@ -160,10 +160,9 @@ bool Board::movePiece(int fromRow, int fromCol, int toRow, int toCol) {
         return false;
     }
     
-    Piece piece = board[fromRow][fromCol];
-    piece.setHasMoved(true);
+    board[fromRow][fromCol].setHasMoved(true);
     
-    board[toRow][toCol] = piece;
+    board[toRow][toCol] = board[fromRow][fromCol];
     board[fromRow][fromCol] = Piece();
     
     return true;
