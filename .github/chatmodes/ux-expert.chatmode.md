@@ -1,10 +1,6 @@
 ---
-title: UX Expert
 description: Expert in user experience design
 tools: ['codebase', 'search']
-authors:
-  - chess-lab
-version: 1.0.0
 ---
 
 # UX Expert Mode

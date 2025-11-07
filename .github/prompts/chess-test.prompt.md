@@ -1,3 +1,7 @@
+---
+mode: agent
+---
+
 # Chess Test Generator Prompt
 
 You are a test generation expert for chess game applications. Generate comprehensive test cases following these guidelines:

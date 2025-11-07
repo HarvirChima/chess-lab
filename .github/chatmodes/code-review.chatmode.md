@@ -1,10 +1,6 @@
 ---
-title: Code Reviewer
 description: Expert code reviewer focusing on chess game quality
 tools: ['codebase', 'search']
-authors:
-  - chess-lab
-version: 1.0.0
 ---
 
 # Code Reviewer Mode

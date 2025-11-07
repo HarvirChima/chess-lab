@@ -1,10 +1,6 @@
 ---
-title: Performance Expert
 description: Expert in code optimization and performance
 tools: ['codebase', 'search']
-authors:
-  - chess-lab
-version: 1.0.0
 ---
 
 # Performance Expert Mode

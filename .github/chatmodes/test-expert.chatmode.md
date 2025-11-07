@@ -1,10 +1,6 @@
 ---
-title: Test Expert
 description: Expert in writing comprehensive test cases and test-driven development
 tools: ['codebase', 'search']
-authors:
-  - chess-lab
-version: 1.0.0
 ---
 
 # Test Expert Mode
