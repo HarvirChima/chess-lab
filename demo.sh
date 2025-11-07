@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Demo script for Chess Lab
+# This script demonstrates the chess game application
+
+echo "Chess Lab - GitHub Copilot Demo"
+echo "================================"
+echo ""
+echo "This is a C++ chess game with full visual display."
+echo ""
+echo "Features:"
+echo "  - Complete chess implementation with standard rules"
+echo "  - Terminal-based UI using ncurses"
+echo "  - Interactive gameplay with keyboard controls"
+echo "  - Color-coded pieces (White: UPPERCASE, Black: lowercase)"
+echo ""
+echo "Controls:"
+echo "  - Arrow keys: Move cursor"
+echo "  - Space: Select piece / Make move"
+echo "  - Q: Quit game"
+echo ""
+echo "Building the project:"
+echo "  mkdir build && cd build"
+echo "  cmake .."
+echo "  make"
+echo ""
+echo "Running the game:"
+echo "  ./chess"
+echo ""
+echo "Running tests:"
+echo "  ./test_chess"
+echo ""
