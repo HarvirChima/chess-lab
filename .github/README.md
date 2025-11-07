@@ -34,6 +34,8 @@ Defines custom chat modes (specialized AI assistants) for this project. Each mod
 - **chessexpert.chatmode.md**: Chess grandmaster and programming expert
 - **testexpert.chatmode.md**: Testing and QA specialist
 - **codereview.chatmode.md**: Code review expert
+- **perfexpert.chatmode.md**: Performance optimization expert
+- **uxexpert.chatmode.md**: User experience expert
 
 **How to use:**
 ```
@@ -41,6 +43,8 @@ In Copilot Chat:
 @chessexpert How should I implement castling?
 @testexpert Generate tests for bishop movement
 @codereview Review the Board::isValidMove function
+@perfexpert Analyze the isValidMove function for performance issues
+@uxexpert How can I improve error messages for invalid moves?
 ```
 
 **File Format:**
