@@ -1,5 +1,6 @@
 #include "Display.h"
 #include <sstream>
+#include <locale.h>
 
 Display::Display() : gameWindow(nullptr), startRow(2), startCol(2) {}
 
@@ -8,6 +9,9 @@ Display::~Display() {
 }
 
 void Display::initialize() {
+    // Set locale to support UTF-8 Unicode characters
+    setlocale(LC_ALL, "");
+    
     initscr();              // Initialize ncurses
     cbreak();               // Disable line buffering
     noecho();               // Don't echo input
