@@ -133,13 +133,9 @@ bool Game::isGameOver() const {
     return !gameRunning;
 }
 
-void Game::processInput() {
-    // Implemented in the main game loop
-}
+// Removed unused placeholder function: Game::processInput
 
-void Game::update() {
-    // Future: Add game logic updates here
-}
+// Removed unused placeholder function: Game::update
 
 void Game::render() {
     display.drawBoard(board);
