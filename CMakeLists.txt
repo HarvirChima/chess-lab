@@ -30,3 +30,19 @@ target_link_libraries(chess ${CURSES_LIBRARIES})
 
 # Include directories
 target_include_directories(chess PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# Add test executable (optional)
+add_executable(test_chess 
+    src/test_chess.cpp
+    src/Board.cpp
+    src/Piece.cpp
+)
+target_include_directories(test_chess PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# Add demo board viewer
+add_executable(demo_board
+    src/demo_board.cpp
+    src/Board.cpp
+    src/Piece.cpp
+)
+target_include_directories(demo_board PRIVATE ${CMAKE_SOURCE_DIR}/include)
