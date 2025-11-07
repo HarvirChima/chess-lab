@@ -69,11 +69,18 @@ git --version
 g++ --version      # Should be 7.0+
 ```
 
-**Option 2: Using MinGW (Alternative)**
+**Option 2: Using MinGW (Alternative - Advanced Users)**
 
-1. Download and install [MinGW-w64](https://www.mingw-w64.org/)
+⚠️ **Note**: MinGW setup is more complex than WSL. We strongly recommend using WSL2 (Option 1) for the best experience.
+
+If you still want to use MinGW:
+1. Download and install [MinGW-w64](https://www.mingw-w64.org/) with MSYS2
 2. Install [CMake for Windows](https://cmake.org/download/)
-3. Install ncurses for MinGW (this is more complex and WSL is recommended)
+3. Install ncurses through MSYS2: `pacman -S mingw-w64-x86_64-ncurses`
+4. Add MinGW and CMake to your PATH environment variable
+5. Use the MSYS2 terminal for building the project
+
+**If you have issues with MinGW**, please use WSL2 instead - it provides a much smoother experience!
 
 ### VS Code Setup
 

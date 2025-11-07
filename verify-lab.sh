@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Lab Verification Script
 # This script verifies that the lab is set up correctly
