@@ -12,6 +12,16 @@ This is an **interactive learning project** perfect for:
 
 **No prior chess programming experience needed!** This lab will guide you through everything step by step.
 
+## 📚 Documentation Quick Links
+
+- 📖 **[QUICKSTART.md](QUICKSTART.md)** - Get running in 5 minutes
+- 📋 **[REFERENCE.md](REFERENCE.md)** - Quick reference card for commands and controls  
+- 🤝 **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guide for contributors
+- 📊 **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Technical project overview
+- 🎬 **[demo.sh](demo.sh)** - Interactive guided demo script
+
+**New to this?** Start with QUICKSTART.md, then come back here for detailed explanations!
+
 ## ✨ Features
 
 - ✅ Complete chess game implementation with standard rules
