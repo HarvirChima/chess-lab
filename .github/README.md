@@ -26,8 +26,8 @@ In Copilot Chat:
 Generate tests for [feature name]
 ```
 
-### `copilot-chat-participants.json`
-Defines custom chat participants (specialized AI assistants) for this project:
+### `copilot-chat-modes.json`
+Defines custom chat modes (specialized AI assistants) for this project:
 
 - **@chessexpert**: Chess grandmaster and programming expert
 - **@testexpert**: Testing and QA specialist
@@ -66,9 +66,9 @@ Edit `copilot-instructions.md` to:
 - Set preferences for error messages
 - Add domain-specific knowledge
 
-### Adding Chat Participants
+### Adding Chat Modes
 
-Edit `copilot-chat-participants.json` to add specialized assistants:
+Edit `copilot-chat-modes.json` to add specialized assistants:
 
 ```json
 {
@@ -84,7 +84,7 @@ Edit `copilot-chat-participants.json` to add specialized assistants:
 - See [LAB_GUIDE.md](../LAB_GUIDE.md) for complete lab exercises
 - Lab 2: Learn about Copilot Instructions
 - Lab 4: Learn about Prompt Files
-- Lab 5: Learn about Custom Chat Participants
+- Lab 5: Learn about Custom Chat Modes
 
 ## Best Practices
 
