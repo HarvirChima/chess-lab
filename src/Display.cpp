@@ -18,18 +18,19 @@ void Display::initialize() {
     keypad(stdscr, TRUE);   // Enable function keys
     curs_set(0);            // Hide cursor
     
-    // Initialize colors with improved color scheme
+    // Initialize colors with classy grey color scheme
     if (has_colors()) {
         start_color();
-        // Define color pairs for a more aesthetic board
+        // Define color pairs for a sophisticated, elegant board
         init_pair(1, COLOR_WHITE, COLOR_BLACK);     // General white text
         // Color pair 2 is intentionally unused (reserved for future use)
-        init_pair(3, COLOR_YELLOW, COLOR_BLUE);     // Highlighted square
-        init_pair(4, COLOR_GREEN, COLOR_BLACK);     // Messages and borders
-        init_pair(5, COLOR_WHITE, COLOR_GREEN);     // White pieces on light squares
-        init_pair(6, COLOR_WHITE, COLOR_CYAN);      // White pieces on dark squares
-        init_pair(7, COLOR_BLACK, COLOR_GREEN);     // Black pieces on light squares
-        init_pair(8, COLOR_BLACK, COLOR_CYAN);      // Black pieces on dark squares
+        init_pair(3, COLOR_BLACK, COLOR_WHITE);     // Highlighted square (inverted for subtle effect)
+        init_pair(4, COLOR_WHITE, COLOR_BLACK);     // Messages and borders (elegant white)
+        // Note: Pairs 5-8 use same colors but white pieces get A_BOLD attribute for distinction
+        init_pair(5, COLOR_BLACK, COLOR_WHITE);     // Pieces on light squares (black text on white bg)
+        init_pair(6, COLOR_WHITE, COLOR_BLACK);     // Pieces on dark squares (white text on black bg)
+        init_pair(7, COLOR_BLACK, COLOR_WHITE);     // Pieces on light squares (black text on white bg)
+        init_pair(8, COLOR_WHITE, COLOR_BLACK);     // Pieces on dark squares (white text on black bg)
     }
     
     // Create game window
@@ -40,7 +41,7 @@ void Display::initialize() {
     if (has_colors()) {
         wattron(gameWindow, COLOR_PAIR(4) | A_BOLD);
     }
-    mvwprintw(gameWindow, 0, 2, "[ ♟ Chess Lab - Beautiful Edition ♟ ]");
+    mvwprintw(gameWindow, 0, 2, "[ ♟ Chess Lab - Classic Edition ♟ ]");
     if (has_colors()) {
         wattroff(gameWindow, COLOR_PAIR(4) | A_BOLD);
     }
