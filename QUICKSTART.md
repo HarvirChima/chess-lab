@@ -49,6 +49,21 @@ Use WSL (Windows Subsystem for Linux):
 
 ## 📥 Step 3: Get the Code
 
+### Recommended: Download as ZIP
+
+1. Go to https://github.com/HarvirChima/chess-lab
+2. Click the green "Code" button
+3. Click "Download ZIP"
+4. Extract the ZIP file to `~/projects/chess-lab` (or your preferred location)
+5. Open the folder in VS Code:
+   ```bash
+   cd ~/projects/chess-lab  # or wherever you extracted it
+   code .  # Opens in VS Code
+   ```
+
+### Alternative: Clone with Git
+
+If you prefer using Git:
 ```bash
 # Go to your projects folder (or create one)
 mkdir -p ~/projects
@@ -120,14 +135,14 @@ All tests passed! ✓
 6. You just made the classic "King's Pawn Opening"! 🎉
 
 **Continue Playing:**
-- Now it's Black's turn (lowercase pieces at top)
+- Now it's Black's turn (filled pieces at top)
 - Select a black piece and move it
 - Keep alternating between White and Black
 
 **Pieces:**
-- White pieces: `P R N B Q K` (uppercase)
-- Black pieces: `p r n b q k` (lowercase)
-- Empty squares: blank or `■`
+- White pieces: `♔ ♕ ♖ ♗ ♘ ♙` (hollow/outlined symbols)
+- Black pieces: `♚ ♛ ♜ ♝ ♞ ♟` (filled/solid symbols)
+- Empty squares: light or dark (░)
 
 ## 🚀 Bonus: See the Demo
 

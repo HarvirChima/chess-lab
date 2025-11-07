@@ -43,6 +43,34 @@ char Piece::getSymbol() const {
     return symbol;
 }
 
+std::string Piece::getUnicodeSymbol() const {
+    if (isEmpty()) return " ";
+    
+    if (color == PieceColor::WHITE) {
+        switch (type) {
+            case PieceType::KING:   return "♔";
+            case PieceType::QUEEN:  return "♕";
+            case PieceType::ROOK:   return "♖";
+            case PieceType::BISHOP: return "♗";
+            case PieceType::KNIGHT: return "♘";
+            case PieceType::PAWN:   return "♙";
+            default:                return " ";
+        }
+    } else if (color == PieceColor::BLACK) {
+        switch (type) {
+            case PieceType::KING:   return "♚";
+            case PieceType::QUEEN:  return "♛";
+            case PieceType::ROOK:   return "♜";
+            case PieceType::BISHOP: return "♝";
+            case PieceType::KNIGHT: return "♞";
+            case PieceType::PAWN:   return "♟";
+            default:                return " ";
+        }
+    }
+    // Should not reach here, but return space for NONE color
+    return " ";
+}
+
 std::string Piece::getName() const {
     if (isEmpty()) return "Empty";
     

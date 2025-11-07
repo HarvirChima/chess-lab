@@ -4,33 +4,37 @@
 #include <iomanip>
 
 void printBoard(const Board& board) {
-    std::cout << "\nChess Board Initial State:\n" << std::endl;
-    std::cout << "    a   b   c   d   e   f   g   h\n";
-    std::cout << "  +---+---+---+---+---+---+---+---+\n";
+    std::cout << "\nChess Board - Beautiful Edition:\n" << std::endl;
+    std::cout << "    ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗\n";
+    std::cout << "      a   b   c   d   e   f   g   h\n";
     
     for (int row = 0; row < 8; row++) {
-        std::cout << (8 - row) << " |";
+        std::cout << " " << (8 - row) << "  ║";
         
         for (int col = 0; col < 8; col++) {
             Piece piece = board.getPiece(row, col);
             if (piece.isEmpty()) {
                 bool isDark = (row + col) % 2 == 1;
-                std::cout << (isDark ? " ■ " : "   ");
+                std::cout << (isDark ? " ░ " : "   ");
             } else {
-                std::cout << " " << piece.getSymbol() << " ";
+                std::cout << " " << piece.getUnicodeSymbol() << " ";
             }
-            std::cout << "|";
+            std::cout << "║";
         }
         
         std::cout << " " << (8 - row) << "\n";
-        std::cout << "  +---+---+---+---+---+---+---+---+\n";
+        
+        if (row < 7) {
+            std::cout << "    ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣\n";
+        }
     }
     
-    std::cout << "    a   b   c   d   e   f   g   h\n";
+    std::cout << "    ╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝\n";
+    std::cout << "      a   b   c   d   e   f   g   h\n";
     std::cout << "\nLegend:\n";
-    std::cout << "  White pieces (UPPERCASE): P=Pawn, R=Rook, N=Knight, B=Bishop, Q=Queen, K=King\n";
-    std::cout << "  Black pieces (lowercase): p=pawn, r=rook, n=knight, b=bishop, q=queen, k=king\n";
-    std::cout << "  Dark squares: ■\n";
+    std::cout << "  White pieces: ♔ ♕ ♖ ♗ ♘ ♙ (King, Queen, Rook, Bishop, Knight, Pawn)\n";
+    std::cout << "  Black pieces: ♚ ♛ ♜ ♝ ♞ ♟ (King, Queen, Rook, Bishop, Knight, Pawn)\n";
+    std::cout << "  Dark squares: ░\n";
 }
 
 int main() {

@@ -35,6 +35,7 @@ public:
     void setHasMoved(bool moved);
     
     char getSymbol() const;
+    std::string getUnicodeSymbol() const;
     std::string getName() const;
     
     bool isEmpty() const;
