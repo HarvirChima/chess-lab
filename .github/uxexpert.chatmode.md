@@ -116,8 +116,7 @@ When reviewing UX:
 **Suggested Improvement:**
 ```
 Before: "Error 42: Invalid"
-After: "That pawn can't move there. Pawns move forward one square 
-        (or two squares on their first move). They capture diagonally."
+After: "That pawn can't move there. Pawns move forward one square (or two squares on their first move). They capture diagonally."
 ```
 
 **Impact:** Users learn chess rules while playing instead of feeling frustrated.
