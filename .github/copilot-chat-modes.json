@@ -1,5 +1,5 @@
 {
-  "participants": [
+  "chatModes": [
     {
       "id": "chessexpert",
       "name": "Chess Expert",

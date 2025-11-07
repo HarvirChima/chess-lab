@@ -938,19 +938,19 @@ You should now be able to:
 
 ## Lab 5: Custom Chat Modes (25 Minutes)
 
-**Objective:** Create specialized AI assistants (custom chat participants) for specific tasks.
+**Objective:** Create specialized AI assistants (custom chat modes) for specific tasks.
 
 ### What are Custom Chat Modes?
 
-Custom Chat Modes (Chat Participants) are specialized AI assistants you can create for specific domains. They have their own personality, expertise, and context. Instead of generic Copilot, you can talk to a "Chess Expert" or "Test Expert"!
+Custom Chat Modes are specialized AI assistants you can create for specific domains. They have their own personality, expertise, and context. Instead of generic Copilot, you can talk to a "Chess Expert" or "Test Expert"!
 
-### Understanding Chat Participants
+### Understanding Chat Modes
 
-The project already has some defined! Look at `.github/copilot-chat-participants.json`:
+The project already has some defined! Look at `.github/copilot-chat-modes.json`:
 
 ```json
 {
-  "participants": [
+  "chatModes": [
     {
       "id": "chessexpert",
       "name": "Chess Expert",
@@ -985,13 +985,13 @@ The project already has some defined! Look at `.github/copilot-chat-participants
 
 **Notice:** The chess expert has deep knowledge of chess rules AND programming!
 
-### Exercise 5.2: Add More Participants
+### Exercise 5.2: Add More Chat Modes
 
-Let's add more specialized assistants. Edit `.github/copilot-chat-participants.json`:
+Let's add more specialized assistants. Edit `.github/copilot-chat-modes.json`:
 
 ```json
 {
-  "participants": [
+  "chatModes": [
     {
       "id": "chessexpert",
       "name": "Chess Expert",
@@ -1020,7 +1020,7 @@ Let's add more specialized assistants. Edit `.github/copilot-chat-participants.j
 }
 ```
 
-### Exercise 5.3: Test Your New Participants
+### Exercise 5.3: Test Your New Chat Modes
 
 **Test Expert:**
 ```
@@ -1037,7 +1037,7 @@ Let's add more specialized assistants. Edit `.github/copilot-chat-participants.j
 @uxexpert How can I improve the error messages when players make invalid moves?
 ```
 
-### Exercise 5.4: Create an Advanced Chess Expert (Optional)
+### Exercise 5.4: Create an Advanced Chat Mode (Optional)
 
 Want to make the chess expert even better? You can create a full VS Code extension!
 
@@ -1046,15 +1046,15 @@ Create `.github/chess-expert/package.json`:
 ```json
 {
   "name": "chess-expert-chat",
-  "displayName": "Chess Expert Chat Participant",
+  "displayName": "Chess Expert Chat Mode",
   "description": "A chess expert that helps with chess programming and rules",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Chat Participants"],
+  "categories": ["Chat Modes"],
   "contributes": {
-    "chatParticipants": [
+    "chatModes": [
       {
         "id": "chess.expert",
         "name": "chessexpert",
@@ -1072,11 +1072,11 @@ This is more advanced and optional - the JSON file method works great for most n
 ### ✅ Lab 5 Checkpoint
 
 You should now be able to:
-- ✅ Understand what chat participants are
-- ✅ Use existing chat participants
-- ✅ Create new chat participants
+- ✅ Understand what chat modes are
+- ✅ Use existing chat modes
+- ✅ Create new chat modes
 - ✅ Define specialized system prompts
-- ✅ Invoke participants with @mentions
+- ✅ Invoke chat modes with @mentions
 - ✅ Build a team of AI specialists
 
 **You now have a team of AI assistants!** 🤖🤖🤖
@@ -1329,7 +1329,7 @@ You've now mastered:
 3. **Review support materials:**
    - Check the [BUG_GUIDE.md](BUG_GUIDE.md) to understand the bugs in detail
    - Review [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) for technical details
-   - Test the custom chat participants
+   - Test the custom chat modes
 
 #### Session Planning
 
@@ -1479,10 +1479,10 @@ make
 3. Sign out and back in: `Ctrl+Shift+P` → "GitHub: Sign Out"
 4. Check subscription at github.com/settings/copilot
 
-**Chat participants not working**
-1. Make sure `.github/copilot-chat-participants.json` exists
+**Chat modes not working**
+1. Make sure `.github/copilot-chat-modes.json` exists
 2. Reload VS Code after creating/editing the file
-3. Type `@` in chat to see available participants
+3. Type `@` in chat to see available chat modes
 
 **Prompt files not found**
 1. Make sure prompt files are in `.github/` directory
@@ -1515,7 +1515,7 @@ You've completed all 6 labs and learned:
 - ✅ **Lab 2:** Copilot Instructions customization
 - ✅ **Lab 3:** Agent Mode for bug fixing
 - ✅ **Lab 4:** Reusable Prompt Files
-- ✅ **Lab 5:** Custom Chat Participants
+- ✅ **Lab 5:** Custom Chat Modes
 - ✅ **Lab 6:** Advanced techniques
 
 ### Continue Your Learning
