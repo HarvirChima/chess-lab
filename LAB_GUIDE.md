@@ -967,6 +967,7 @@ tools: ['codebase', 'search']
 
 You are a Chess Grandmaster and expert programmer...
 ```
+## Lab 5: Custom Chat Modes (25 Minutes)
 
 ### Exercise 5.1: Use the Chess Expert
 
