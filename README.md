@@ -10,7 +10,6 @@ A beginner-friendly C++ chess game application designed as a hands-on lab for le
 |--------------|------------|
 | 🎓 **Learn GitHub Copilot** | [GET_STARTED.md](GET_STARTED.md) → Path A |
 | ♟️ **Play chess now** | [GET_STARTED.md](GET_STARTED.md) → Path B |
-| 👨‍🏫 **Teach this lab** | [INSTRUCTOR_GUIDE.md](INSTRUCTOR_GUIDE.md) |
 | 🤝 **Contribute code** | [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 ## 🎯 What is This Lab?
@@ -38,19 +37,17 @@ An **interactive learning project** perfect for:
 
 ## 📚 Documentation Hub
 
-### 🎓 For Students
-- **[GET_STARTED.md](GET_STARTED.md)** - Start here! Choose your path
-- **[LAB_GUIDE.md](LAB_GUIDE.md)** - Complete lab exercises (6 parts)
-- **[REFERENCE.md](REFERENCE.md)** - Quick reference card
-- **[BUG_GUIDE.md](BUG_GUIDE.md)** - Details on intentional bugs
+### 🎓 For Students & Learners
+- **[GET_STARTED.md](GET_STARTED.md)** - Start here! Choose your path (Learning or Playing)
+- **[LAB_GUIDE.md](LAB_GUIDE.md)** - Complete lab exercises (6 parts, 2.5 hours)
+- **[REFERENCE.md](REFERENCE.md)** - Quick reference card for commands
+- **[BUG_GUIDE.md](BUG_GUIDE.md)** - Details on intentional bugs (for Lab 3)
 
-### 👨‍🏫 For Instructors
-- **[INSTRUCTOR_GUIDE.md](INSTRUCTOR_GUIDE.md)** - Complete teaching guide
-- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Technical overview
+### 🤝 For Contributors & Teachers
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute code or improvements
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Technical architecture details
 
-### 🤝 For Contributors
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute
-- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Architecture details
+**Teaching this lab?** See the [Teaching Tips](#-teaching-tips) section below.
 
 ## ✨ Features
 
@@ -138,6 +135,70 @@ Want to improve this lab? We welcome contributions!
 - 🎓 Share your success stories
 
 **See [CONTRIBUTING.md](CONTRIBUTING.md) for full guide**
+
+## 👨‍🏫 Teaching Tips
+
+**Using this lab in a classroom or workshop?** Here are some tips:
+
+### Quick Setup for Instructors
+
+1. **Test it yourself first** (1 hour):
+   - Clone the repo and build it: `git clone https://github.com/HarvirChima/chess-lab.git && cd chess-lab && mkdir build && cd build && cmake .. && make`
+   - Run through Lab 1-3 yourself to understand the flow
+   - Try the intentional bugs (see [BUG_GUIDE.md](BUG_GUIDE.md))
+
+2. **Prepare students** (share before class):
+   - Send link to [GET_STARTED.md](GET_STARTED.md)
+   - Students should have tools installed before class
+   - Verify students have GitHub Copilot access
+
+### Suggested Class Structure
+
+**Option 1: 2.5 Hour Workshop**
+- 0:00-0:20: Setup help & introduction
+- 0:20-0:35: Lab 1 (Ask Mode)
+- 0:35-0:55: Lab 2 (Copilot Instructions)
+- 0:55-1:00: Break
+- 1:00-1:25: Lab 3 (Agent Mode - bug fixing)
+- 1:25-1:45: Lab 4 (Prompt Files)
+- 1:45-2:10: Lab 5 (Custom Chat)
+- 2:10-2:30: Lab 6 overview & Q&A
+
+**Option 2: Self-Paced (Homework)**
+- Students work through [LAB_GUIDE.md](LAB_GUIDE.md) at their own pace
+- Provide office hours for questions
+- Expected completion: 2.5-3 hours
+
+### Common Student Issues
+
+**"I can't build the project"**
+- Check they have all prerequisites: `g++ --version`, `cmake --version`
+- Common issue: ncurses not installed
+- Solution: See [GET_STARTED.md](GET_STARTED.md) Installation Guide
+
+**"Copilot isn't working"**
+- Check status bar icon in VS Code (should show checkmark)
+- Try reloading VS Code: `Ctrl+Shift+P` → "Reload Window"
+- Verify subscription at github.com/settings/copilot
+
+**"I don't see the bugs in Lab 3"**
+- The bugs are intentional! Students fix them as part of the lab
+- Tests still pass because tests don't cover the bug cases
+- See [BUG_GUIDE.md](BUG_GUIDE.md) for details
+
+### Assessment Ideas
+
+- Have students fix all intentional bugs
+- Ask them to add a new feature (e.g., move counter, castling)
+- Have them create their own prompt file
+- Ask them to explain 3 Copilot best practices they learned
+
+### Time Estimates
+
+- Building & setup: 5-10 minutes
+- Each lab: 15-30 minutes (as labeled)
+- Total lab time: 2.5 hours
+- Adding a new feature: 30-60 minutes
 
 ## 📚 Additional Resources
 

@@ -381,6 +381,21 @@ Contributors are acknowledged in:
 - Focus on the code, not the person
 - Remember: everyone is here to learn!
 
+## 🎓 Teaching & Workshop Contributions
+
+Want to teach this lab or run a workshop? We'd love to hear about it!
+
+**Share your experience:**
+- Open a Discussion to share how you used the lab
+- Report any issues students encountered
+- Suggest improvements to the lab exercises
+- Share your class structure or timeline
+
+**Creating educational content:**
+- You're welcome to use this lab in courses and workshops
+- Attribution appreciated (link back to this repo)
+- If you create supplementary materials, consider contributing them back
+
 ## 📄 License
 
 By contributing, you agree that your contributions will be licensed under the same license as the project.
