@@ -971,23 +971,24 @@ You are a Chess Grandmaster and expert programmer...
 ### Exercise 5.1: Use the Chess Expert
 
 1. **Open Copilot Chat**
-2. **Type `@` and see** if `@chess-expert` appears in the suggestions
-3. **Try these queries:**
+2. **Select the chat mode** using the mode selector at the top of the chat panel
+3. **Choose `chess-expert`** from the available modes
+4. **Try these queries:**
 
 ```
-@chess-expert Can a knight jump over other pieces?
-```
-
-```
-@chess-expert What are the conditions required for castling?
+Can a knight jump over other pieces?
 ```
 
 ```
-@chess-expert Explain how en passant works
+What are the conditions required for castling?
 ```
 
 ```
-@chess-expert Review the pawn movement logic in Board.cpp for chess rule correctness
+Explain how en passant works
+```
+
+```
+Review the pawn movement logic in Board.cpp for chess rule correctness
 ```
 
 **Notice:** The chess expert has deep knowledge of chess rules AND programming!
@@ -1019,24 +1020,26 @@ You are a security expert specializing in C++ applications. Analyze code for sec
 
 ### Exercise 5.3: Test the Expert Chat Modes
 
+Select each mode from the mode selector at the top of the chat panel, then try these queries:
+
 **Test Expert:**
 ```
-@test-expert What test cases should I write for the bishop movement validation?
+What test cases should I write for the bishop movement validation?
 ```
 
 **Performance Expert:**
 ```
-@perf-expert Review the Board::isValidMove function for performance issues. It's called every time a move is attempted.
+Review the Board::isValidMove function for performance issues. It's called every time a move is attempted.
 ```
 
 **UX Expert:**
 ```
-@ux-expert How can I improve the error messages when players make invalid moves?
+How can I improve the error messages when players make invalid moves?
 ```
 
 **Code Review Expert:**
 ```
-@code-review Review the Board class for potential issues
+Review the Board class for potential issues
 ```
 
 ### Exercise 5.4: Customize an Existing Chat Mode (Optional)
@@ -1064,7 +1067,7 @@ You should now be able to:
 - ✅ Use existing chat modes
 - ✅ Create new chat modes
 - ✅ Define specialized system prompts
-- ✅ Invoke chat modes with @mentions
+- ✅ Select chat modes from the mode selector
 - ✅ Build a team of AI specialists
 
 **You now have a team of AI assistants!** 🤖🤖🤖
@@ -1254,8 +1257,10 @@ Format as Doxygen comments.
 
 ### Exercise 6.5: Performance Optimization
 
+Select the `perf-expert` mode from the mode selector, then ask:
+
 ```
-@perf-expert Analyze the Board::isValidMove function. It's called frequently during gameplay. Are there any optimizations we could make?
+Analyze the Board::isValidMove function. It's called frequently during gameplay. Are there any optimizations we could make?
 
 Consider:
 - Caching valid moves
@@ -1471,7 +1476,7 @@ make
 1. Make sure `.chatmode.md` files exist in `.github/chatmodes/` directory
 2. Verify files have proper YAML frontmatter with `description` and `tools` fields
 3. Reload VS Code after creating/editing chat mode files
-4. Type `@` in chat to see available chat modes
+4. Use the mode selector at the top of the chat panel to select available chat modes
 5. Check [VS Code Custom Chat Modes docs](https://code.visualstudio.com/docs/copilot/customization/custom-chat-modes)
 
 **Prompt files not found**
