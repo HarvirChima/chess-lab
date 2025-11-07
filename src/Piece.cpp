@@ -56,7 +56,7 @@ std::string Piece::getUnicodeSymbol() const {
             case PieceType::PAWN:   return "♙";
             default:                return " ";
         }
-    } else {
+    } else if (color == PieceColor::BLACK) {
         switch (type) {
             case PieceType::KING:   return "♚";
             case PieceType::QUEEN:  return "♛";
@@ -67,6 +67,8 @@ std::string Piece::getUnicodeSymbol() const {
             default:                return " ";
         }
     }
+    // Should not reach here, but return space for NONE color
+    return " ";
 }
 
 std::string Piece::getName() const {

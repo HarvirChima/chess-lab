@@ -18,12 +18,11 @@ void Display::initialize() {
     if (has_colors()) {
         start_color();
         // Define color pairs for a more aesthetic board
-        init_pair(1, COLOR_WHITE, COLOR_BLACK);     // White pieces on black
-        init_pair(2, COLOR_BLACK, COLOR_BLACK);     // Black pieces on black  
+        init_pair(1, COLOR_WHITE, COLOR_BLACK);     // General white text
         init_pair(3, COLOR_YELLOW, COLOR_BLUE);     // Highlighted square
-        init_pair(4, COLOR_GREEN, COLOR_BLACK);     // Messages
-        init_pair(5, COLOR_WHITE, COLOR_GREEN);     // Light squares
-        init_pair(6, COLOR_WHITE, COLOR_CYAN);      // Dark squares
+        init_pair(4, COLOR_GREEN, COLOR_BLACK);     // Messages and borders
+        init_pair(5, COLOR_WHITE, COLOR_GREEN);     // White pieces on light squares
+        init_pair(6, COLOR_WHITE, COLOR_CYAN);      // White pieces on dark squares
         init_pair(7, COLOR_BLACK, COLOR_GREEN);     // Black pieces on light squares
         init_pair(8, COLOR_BLACK, COLOR_CYAN);      // Black pieces on dark squares
     }
