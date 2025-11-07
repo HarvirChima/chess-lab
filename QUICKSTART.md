@@ -135,14 +135,14 @@ All tests passed! ✓
 6. You just made the classic "King's Pawn Opening"! 🎉
 
 **Continue Playing:**
-- Now it's Black's turn (lowercase pieces at top)
+- Now it's Black's turn (filled pieces at top)
 - Select a black piece and move it
 - Keep alternating between White and Black
 
 **Pieces:**
-- White pieces: `P R N B Q K` (uppercase)
-- Black pieces: `p r n b q k` (lowercase)
-- Empty squares: blank or `■`
+- White pieces: `♔ ♕ ♖ ♗ ♘ ♙` (hollow/outlined symbols)
+- Black pieces: `♚ ♛ ♜ ♝ ♞ ♟` (filled/solid symbols)
+- Empty squares: light or dark (░)
 
 ## 🚀 Bonus: See the Demo
 

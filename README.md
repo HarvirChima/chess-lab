@@ -46,7 +46,8 @@ Each lab includes step-by-step instructions, example prompts, and hands-on exerc
 ## ✨ Features
 
 - ✅ Complete chess game implementation with standard rules
-- ✅ Terminal-based visual display using ncurses
+- ✅ Beautiful terminal display with Unicode chess pieces (♔♕♖♗♘♙)
+- ✅ Elegant box-drawing borders and colored squares
 - ✅ Interactive gameplay with arrow key navigation
 - ✅ Turn-based play for White and Black players
 - ✅ Move validation and piece movement rules
@@ -274,23 +275,23 @@ This shows you the initial chess board layout and an example position after a fe
 ### Understanding the Board
 
 **Piece Symbols:**
-- **White pieces** (you move first): UPPERCASE letters
-  - `P` = Pawn
-  - `R` = Rook (castle)
-  - `N` = Knight (the horse)
-  - `B` = Bishop
-  - `Q` = Queen
-  - `K` = King
+- **White pieces** (you move first): Beautiful Unicode symbols
+  - `♔` = King
+  - `♕` = Queen
+  - `♖` = Rook (castle)
+  - `♗` = Bishop
+  - `♘` = Knight (the horse)
+  - `♙` = Pawn
 
-- **Black pieces**: lowercase letters
-  - `p` = pawn
-  - `r` = rook
-  - `n` = knight
-  - `b` = bishop
-  - `q` = queen
-  - `k` = king
+- **Black pieces**: Filled Unicode symbols
+  - `♚` = king
+  - `♛` = queen
+  - `♜` = rook
+  - `♝` = bishop
+  - `♞` = knight
+  - `♟` = pawn
 
-- **Empty squares**: Either blank or `■` (representing dark squares)
+- **Empty squares**: Light squares (   ) or dark squares (░)
 
 ### Your First Game - Step by Step
 
