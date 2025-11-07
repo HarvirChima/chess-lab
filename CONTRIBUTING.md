@@ -303,7 +303,7 @@ bool Board::isSafeMove(Position from, Position to) {
 
 When adding features, update:
 - `README.md` - If user-facing feature
-- `QUICKSTART.md` - If changes quick start process
+- `GET_STARTED.md` - If changes setup or quick start process
 - Code comments - Always
 - Test documentation - For test additions
 
