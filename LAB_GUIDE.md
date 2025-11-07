@@ -761,7 +761,7 @@ Prompt Files (`.prompt.md` files) are reusable prompts you can invoke with a sim
 
 The project already has a prompt file! Let's look at it:
 
-1. **Open** `.github/chess-test.prompt.md`
+1. **Open** `.github/prompts/chess-test.prompt.md`
 2. **Read through it** - see how it's structured:
    - Front matter (name, description)
    - Instructions for the AI
@@ -778,7 +778,7 @@ Let's use it to generate tests!
 2. **Type:**
 
 ```
-#file:.github/chess-test.prompt.md
+#file:.github/prompts/chess-test.prompt.md
 
 Generate tests for rook movement. The rook should be able to move any number of squares horizontally or vertically, but cannot jump over pieces.
 ```
@@ -791,7 +791,7 @@ Generate tests for rook movement. The rook should be able to move any number of 
 
 Let's create your own prompt file!
 
-1. **Create** `.github/chess-code-review.prompt.md`
+1. **Create** `.github/prompts/chess-code-review.prompt.md`
 2. **Add this content:**
 
 ```markdown
@@ -858,7 +858,7 @@ Now review the following code:
 4. **Type:**
 
 ```
-#file:.github/chess-code-review.prompt.md
+#file:.github/prompts/chess-code-review.prompt.md
 
 Review this function
 ```
@@ -868,7 +868,7 @@ Review this function
 
 ### Exercise 4.5: Create a Documentation Prompt
 
-Create `.github/chess-doc.prompt.md`:
+Create `.github/prompts/chess-doc.prompt.md`:
 
 ```markdown
 ---
@@ -917,10 +917,10 @@ Generate documentation for: {{FUNCTION_OR_CLASS}}
 ### Exercise 4.6: Create Your Own Prompt
 
 Think of a repetitive task you might need. Create a prompt file for it! Ideas:
-- **Bug Hunter:** `.github/find-bugs.prompt.md` - Systematically finds potential bugs
-- **Refactoring Helper:** `.github/refactor.prompt.md` - Suggests code improvements
-- **Feature Planner:** `.github/feature-design.prompt.md` - Plans new features
-- **Performance Optimizer:** `.github/optimize.prompt.md` - Finds performance issues
+- **Bug Hunter:** `.github/prompts/find-bugs.prompt.md` - Systematically finds potential bugs
+- **Refactoring Helper:** `.github/prompts/refactor.prompt.md` - Suggests code improvements
+- **Feature Planner:** `.github/prompts/feature-design.prompt.md` - Plans new features
+- **Performance Optimizer:** `.github/prompts/optimize.prompt.md` - Finds performance issues
 
 ### ✅ Lab 4 Checkpoint
 
@@ -946,11 +946,13 @@ Custom Chat Modes are specialized AI assistants you can create for specific doma
 
 ### Understanding Chat Modes
 
-The project already has some defined! Look at the `.chatmode.md` files in `.github/`:
+The project already has some defined! Look at the `.chatmode.md` files in `.github/chatmodes/`:
 
-- `chessexpert.chatmode.md` - Chess grandmaster and programming expert
-- `testexpert.chatmode.md` - Testing and QA specialist  
-- `codereview.chatmode.md` - Code review expert
+- `chess-expert.chatmode.md` - Chess grandmaster and programming expert
+- `test-expert.chatmode.md` - Testing and QA specialist  
+- `code-review.chatmode.md` - Code review expert
+- `perf-expert.chatmode.md` - Performance optimization specialist
+- `ux-expert.chatmode.md` - User experience expert
 
 Each file uses YAML frontmatter for configuration:
 
@@ -969,97 +971,77 @@ You are a Chess Grandmaster and expert programmer...
 ### Exercise 5.1: Use the Chess Expert
 
 1. **Open Copilot Chat**
-2. **Type `@` and see** if `@chessexpert` appears in the suggestions
+2. **Type `@` and see** if `@chess-expert` appears in the suggestions
 3. **Try these queries:**
 
 ```
-@chessexpert Can a knight jump over other pieces?
+@chess-expert Can a knight jump over other pieces?
 ```
 
 ```
-@chessexpert What are the conditions required for castling?
+@chess-expert What are the conditions required for castling?
 ```
 
 ```
-@chessexpert Explain how en passant works
+@chess-expert Explain how en passant works
 ```
 
 ```
-@chessexpert Review the pawn movement logic in Board.cpp for chess rule correctness
+@chess-expert Review the pawn movement logic in Board.cpp for chess rule correctness
 ```
 
 **Notice:** The chess expert has deep knowledge of chess rules AND programming!
 
-### Exercise 5.2: Add More Chat Modes
+### Exercise 5.2: Create Custom Chat Modes (Optional)
 
-Let's add more specialized assistants. Create new `.chatmode.md` files in `.github/`:
+The project already includes several expert chat modes! But if you want to create your own specialized assistants, you can add new `.chatmode.md` files in `.github/chatmodes/`.
 
-**Create `.github/perfexpert.chatmode.md`:**
+**Example - Creating a Security Expert:**
 
-```markdown
----
-title: Performance Expert
-description: Expert in code optimization and performance
-tools: ['codebase', 'search']
-authors:
-  - chess-lab
-version: 1.0.0
----
-
-# Performance Expert Mode
-
-You are a performance optimization expert. Analyze code for bottlenecks, suggest algorithmic improvements, recommend profiling strategies. Focus on practical improvements that matter for real-world use.
-
-## Key Focus Areas
-- Algorithm complexity analysis
-- Memory usage optimization
-- Cache-friendly data structures
-- Profile-guided optimization
-```
-
-**Create `.github/uxexpert.chatmode.md`:**
+Create `.github/chatmodes/security-expert.chatmode.md`:
 
 ```markdown
 ---
-title: UX Expert
-description: Expert in user experience design
+description: Expert in security and vulnerability analysis
 tools: ['codebase', 'search']
-authors:
-  - chess-lab
-version: 1.0.0
 ---
 
-# UX Expert Mode
+# Security Expert Mode
 
-You are a UX expert focusing on developer experience and end-user experience. Make error messages helpful and educational. Design intuitive interfaces. Consider accessibility and usability for beginners.
+You are a security expert specializing in C++ applications. Analyze code for security vulnerabilities, suggest secure coding practices, and recommend mitigations.
 
 ## Key Focus Areas
-- Clear, helpful error messages
-- Intuitive user interfaces
-- Accessibility considerations
-- Beginner-friendly design
+- Buffer overflow detection
+- Input validation
+- Memory safety
+- Secure coding patterns
 ```
 
-### Exercise 5.3: Test Your New Chat Modes
+### Exercise 5.3: Test the Expert Chat Modes
 
 **Test Expert:**
 ```
-@testexpert What test cases should I write for the bishop movement validation?
+@test-expert What test cases should I write for the bishop movement validation?
 ```
 
 **Performance Expert:**
 ```
-@perfexpert Review the Board::isValidMove function for performance issues. It's called every time a move is attempted.
+@perf-expert Review the Board::isValidMove function for performance issues. It's called every time a move is attempted.
 ```
 
 **UX Expert:**
 ```
-@uxexpert How can I improve the error messages when players make invalid moves?
+@ux-expert How can I improve the error messages when players make invalid moves?
+```
+
+**Code Review Expert:**
+```
+@code-review Review the Board class for potential issues
 ```
 
 ### Exercise 5.4: Customize an Existing Chat Mode (Optional)
 
-Want to make the chess expert even better? Edit `.github/chessexpert.chatmode.md` and add:
+Want to make the chess expert even better? Edit `.github/chatmodes/chess-expert.chatmode.md` and add:
 
 ```markdown
 ## Advanced Features
@@ -1239,10 +1221,10 @@ Use Copilot for systematic code reviews.
 
 1. **Select any function** in `src/Board.cpp`
 2. **Right-click** → **Copilot** → **Review Selection**
-3. Or use your code review prompt:
+3. Or use your code review prompt (if you created it):
 
 ```
-#file:.github/chess-code-review.prompt.md
+#file:.github/prompts/chess-code-review.prompt.md
 
 Review the selected code
 ```
@@ -1273,7 +1255,7 @@ Format as Doxygen comments.
 ### Exercise 6.5: Performance Optimization
 
 ```
-@perfexpert Analyze the Board::isValidMove function. It's called frequently during gameplay. Are there any optimizations we could make?
+@perf-expert Analyze the Board::isValidMove function. It's called frequently during gameplay. Are there any optimizations we could make?
 
 Consider:
 - Caching valid moves
@@ -1486,15 +1468,15 @@ make
 4. Check subscription at github.com/settings/copilot
 
 **Chat modes not working**
-1. Make sure `.chatmode.md` files exist in `.github/` directory
-2. Verify files have proper YAML frontmatter (see `.github/README.md` for format)
+1. Make sure `.chatmode.md` files exist in `.github/chatmodes/` directory
+2. Verify files have proper YAML frontmatter with `description` and `tools` fields
 3. Reload VS Code after creating/editing chat mode files
 4. Type `@` in chat to see available chat modes
 5. Check [VS Code Custom Chat Modes docs](https://code.visualstudio.com/docs/copilot/customization/custom-chat-modes)
 
 **Prompt files not found**
-1. Make sure prompt files are in `.github/` directory
-2. Use `#file:` prefix: `#file:.github/chess-test.prompt.md`
+1. Make sure prompt files are in `.github/prompts/` directory
+2. Use `#file:` prefix: `#file:.github/prompts/chess-test.prompt.md`
 3. Check file extension is `.prompt.md` not just `.md`
 
 **Agent Mode not showing up**
