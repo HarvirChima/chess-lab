@@ -946,19 +946,24 @@ Custom Chat Modes are specialized AI assistants you can create for specific doma
 
 ### Understanding Chat Modes
 
-The project already has some defined! Look at `.github/copilot-chat-modes.json`:
+The project already has some defined! Look at the `.chatmode.md` files in `.github/`:
 
-```json
-{
-  "chatModes": [
-    {
-      "id": "chessexpert",
-      "name": "Chess Expert",
-      "description": "Chess grandmaster and programming expert",
-      "systemMessage": "You are a Chess Grandmaster..."
-    }
-  ]
-}
+- `chessexpert.chatmode.md` - Chess grandmaster and programming expert
+- `testexpert.chatmode.md` - Testing and QA specialist  
+- `codereview.chatmode.md` - Code review expert
+
+Each file uses YAML frontmatter for configuration:
+
+```markdown
+---
+title: Chess Expert
+description: Chess grandmaster and programming expert
+tools: ['codebase', 'search']
+---
+
+# Chess Expert Mode
+
+You are a Chess Grandmaster and expert programmer...
 ```
 
 ### Exercise 5.1: Use the Chess Expert
@@ -987,37 +992,52 @@ The project already has some defined! Look at `.github/copilot-chat-modes.json`:
 
 ### Exercise 5.2: Add More Chat Modes
 
-Let's add more specialized assistants. Edit `.github/copilot-chat-modes.json`:
+Let's add more specialized assistants. Create new `.chatmode.md` files in `.github/`:
 
-```json
-{
-  "chatModes": [
-    {
-      "id": "chessexpert",
-      "name": "Chess Expert",
-      "description": "Chess grandmaster and programming expert",
-      "systemMessage": "You are a Chess Grandmaster and expert programmer. Explain chess rules clearly, validate code against official chess rules, use algebraic notation, and be encouraging to learners. Include chess metaphors and occasionally reference famous games."
-    },
-    {
-      "id": "testexpert",
-      "name": "Test Expert",
-      "description": "Expert in writing comprehensive test cases",
-      "systemMessage": "You are a testing expert specializing in chess game applications. Generate thorough test cases covering edge cases, boundary conditions, and error scenarios. Follow TDD principles. Make tests clear and maintainable."
-    },
-    {
-      "id": "perfexpert",
-      "name": "Performance Expert",
-      "description": "Expert in code optimization and performance",
-      "systemMessage": "You are a performance optimization expert. Analyze code for bottlenecks, suggest algorithmic improvements, recommend profiling strategies. Focus on practical improvements that matter for real-world use."
-    },
-    {
-      "id": "uxexpert",
-      "name": "UX Expert",
-      "description": "Expert in user experience design",
-      "systemMessage": "You are a UX expert focusing on developer experience and end-user experience. Make error messages helpful and educational. Design intuitive interfaces. Consider accessibility and usability for beginners."
-    }
-  ]
-}
+**Create `.github/perfexpert.chatmode.md`:**
+
+```markdown
+---
+title: Performance Expert
+description: Expert in code optimization and performance
+tools: ['codebase', 'search']
+authors:
+  - chess-lab
+version: 1.0.0
+---
+
+# Performance Expert Mode
+
+You are a performance optimization expert. Analyze code for bottlenecks, suggest algorithmic improvements, recommend profiling strategies. Focus on practical improvements that matter for real-world use.
+
+## Key Focus Areas
+- Algorithm complexity analysis
+- Memory usage optimization
+- Cache-friendly data structures
+- Profile-guided optimization
+```
+
+**Create `.github/uxexpert.chatmode.md`:**
+
+```markdown
+---
+title: UX Expert
+description: Expert in user experience design
+tools: ['codebase', 'search']
+authors:
+  - chess-lab
+version: 1.0.0
+---
+
+# UX Expert Mode
+
+You are a UX expert focusing on developer experience and end-user experience. Make error messages helpful and educational. Design intuitive interfaces. Consider accessibility and usability for beginners.
+
+## Key Focus Areas
+- Clear, helpful error messages
+- Intuitive user interfaces
+- Accessibility considerations
+- Beginner-friendly design
 ```
 
 ### Exercise 5.3: Test Your New Chat Modes
@@ -1037,37 +1057,23 @@ Let's add more specialized assistants. Edit `.github/copilot-chat-modes.json`:
 @uxexpert How can I improve the error messages when players make invalid moves?
 ```
 
-### Exercise 5.4: Create an Advanced Chat Mode (Optional)
+### Exercise 5.4: Customize an Existing Chat Mode (Optional)
 
-Want to make the chess expert even better? You can create a full VS Code extension!
+Want to make the chess expert even better? Edit `.github/chessexpert.chatmode.md` and add:
 
-Create `.github/chess-expert/package.json`:
+```markdown
+## Advanced Features
+- Reference famous chess games (e.g., "The Immortal Game", "Opera Game")
+- Use chess emoji: ♔♕♖♗♘♙
+- Include chess puns and metaphors
+- Connect chess concepts to programming patterns
 
-```json
-{
-  "name": "chess-expert-chat",
-  "displayName": "Chess Expert Chat Mode",
-  "description": "A chess expert that helps with chess programming and rules",
-  "version": "0.1.0",
-  "engines": {
-    "vscode": "^1.85.0"
-  },
-  "categories": ["Chat Modes"],
-  "contributes": {
-    "chatModes": [
-      {
-        "id": "chess.expert",
-        "name": "chessexpert",
-        "description": "Chess expert that understands both chess rules and code",
-        "isSticky": true
-      }
-    ]
-  },
-  "main": "./extension.js"
-}
+## Example Responses
+"Implementing move validation is like defending your king - you need layers of protection! ♔
+First validate piece type, then movement pattern, then path clearance."
 ```
 
-This is more advanced and optional - the JSON file method works great for most needs!
+**Pro Tip:** The more specific your instructions, the better the AI will match your desired behavior!
 
 ### ✅ Lab 5 Checkpoint
 
@@ -1480,9 +1486,11 @@ make
 4. Check subscription at github.com/settings/copilot
 
 **Chat modes not working**
-1. Make sure `.github/copilot-chat-modes.json` exists
-2. Reload VS Code after creating/editing the file
-3. Type `@` in chat to see available chat modes
+1. Make sure `.chatmode.md` files exist in `.github/` directory
+2. Verify files have proper YAML frontmatter (see `.github/README.md` for format)
+3. Reload VS Code after creating/editing chat mode files
+4. Type `@` in chat to see available chat modes
+5. Check [VS Code Custom Chat Modes docs](https://code.visualstudio.com/docs/copilot/customization/custom-chat-modes)
 
 **Prompt files not found**
 1. Make sure prompt files are in `.github/` directory
