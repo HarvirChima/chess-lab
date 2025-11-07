@@ -129,7 +129,26 @@ If all commands show version numbers, you're ready to proceed! 🎉
 
 ## 📥 Getting the Code
 
-### Option 1: Clone with Git (Recommended)
+### Option 1: Download ZIP (Recommended)
+
+1. Visit the repository on GitHub: https://github.com/HarvirChima/chess-lab
+2. Click the green "Code" button
+3. Select "Download ZIP"
+4. Extract the ZIP file to your preferred location (e.g., `~/projects/chess-lab`)
+5. Open the extracted folder in VS Code or your preferred editor
+
+**To open in VS Code:**
+```bash
+# Navigate to the extracted folder
+cd ~/projects/chess-lab  # or wherever you extracted it
+
+# Open in VS Code
+code .
+```
+
+### Option 2: Clone with Git (Alternative)
+
+If you prefer using Git:
 
 ```bash
 # Navigate to where you want to store the project
@@ -141,14 +160,6 @@ git clone https://github.com/HarvirChima/chess-lab.git
 # Enter the project directory
 cd chess-lab
 ```
-
-### Option 2: Download ZIP
-
-1. Visit the repository on GitHub
-2. Click the green "Code" button
-3. Select "Download ZIP"
-4. Extract the ZIP file
-5. Open terminal/command prompt in the extracted folder
 
 ## 🔨 Building the Project
 

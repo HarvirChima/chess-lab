@@ -26,11 +26,17 @@ sudo apt-get install -y libncurses5-dev libncursesw5-dev cmake g++ git
 ## Build and Run
 
 ```bash
-# Clone the repository
-git clone https://github.com/HarvirChima/chess-lab.git
-cd chess-lab
+# Download the repository as ZIP from GitHub:
+# 1. Visit https://github.com/HarvirChima/chess-lab
+# 2. Click "Code" button → "Download ZIP"
+# 3. Extract to your preferred location
+# Then navigate to the extracted folder:
+cd chess-lab  # or wherever you extracted it
 
-# Build
+# Open in VS Code (recommended)
+code .
+
+# Build in terminal
 mkdir build && cd build
 cmake ..
 make
@@ -40,6 +46,13 @@ make
 
 # Play the game!
 ./chess
+```
+
+**Alternative - Clone with Git:**
+```bash
+git clone https://github.com/HarvirChima/chess-lab.git
+cd chess-lab
+# Then follow build steps above
 ```
 
 ## Game Controls

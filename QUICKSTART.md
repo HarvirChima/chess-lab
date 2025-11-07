@@ -49,6 +49,21 @@ Use WSL (Windows Subsystem for Linux):
 
 ## 📥 Step 3: Get the Code
 
+### Recommended: Download as ZIP
+
+1. Go to https://github.com/HarvirChima/chess-lab
+2. Click the green "Code" button
+3. Click "Download ZIP"
+4. Extract the ZIP file to `~/projects/chess-lab` (or your preferred location)
+5. Open the folder in VS Code:
+   ```bash
+   cd ~/projects/chess-lab  # or wherever you extracted it
+   code .  # Opens in VS Code
+   ```
+
+### Alternative: Clone with Git
+
+If you prefer using Git:
 ```bash
 # Go to your projects folder (or create one)
 mkdir -p ~/projects
