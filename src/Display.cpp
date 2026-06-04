@@ -2,7 +2,7 @@
 #include <sstream>
 #include <locale.h>
 
-Display::Display() : gameWindow(nullptr), startRow(2), startCol(2) {}
+Display::Display() : gameWindow(nullptr), startRow(2), startCol(2), theme(ColorTheme::CLASSIC) {}
 
 Display::~Display() {
     cleanup();
@@ -18,19 +18,10 @@ void Display::initialize() {
     keypad(stdscr, TRUE);   // Enable function keys
     curs_set(0);            // Hide cursor
     
-    // Initialize colors with classy grey color scheme
+    // Initialize colors with the currently selected theme
     if (has_colors()) {
         start_color();
-        // Define color pairs for a sophisticated, elegant board
-        init_pair(1, COLOR_WHITE, COLOR_BLACK);     // General white text
-        // Color pair 2 is intentionally unused (reserved for future use)
-        init_pair(3, COLOR_BLACK, COLOR_WHITE);     // Highlighted square (inverted for subtle effect)
-        init_pair(4, COLOR_WHITE, COLOR_BLACK);     // Messages and borders (elegant white)
-        // Note: Pairs 5-8 use same colors but white pieces get A_BOLD attribute for distinction
-        init_pair(5, COLOR_BLACK, COLOR_WHITE);     // Pieces on light squares (black text on white bg)
-        init_pair(6, COLOR_WHITE, COLOR_BLACK);     // Pieces on dark squares (white text on black bg)
-        init_pair(7, COLOR_BLACK, COLOR_WHITE);     // Pieces on light squares (black text on white bg)
-        init_pair(8, COLOR_WHITE, COLOR_BLACK);     // Pieces on dark squares (white text on black bg)
+        applyTheme(theme);
     }
     
     // Create game window
@@ -257,4 +248,141 @@ void Display::drawStatus(const std::string& status) {
 
 void Display::refresh() {
     wrefresh(gameWindow);
+}
+
+void Display::applyTheme(ColorTheme t) {
+    theme = t;
+
+    // Pick the foreground/background colors for light squares and dark squares.
+    short lightBg = COLOR_WHITE;
+    short darkBg  = COLOR_BLACK;
+    short borderFg = COLOR_WHITE;
+    short borderBg = COLOR_BLACK;
+
+    switch (t) {
+        case ColorTheme::CLASSIC:
+            lightBg = COLOR_WHITE; darkBg = COLOR_BLACK;
+            borderFg = COLOR_WHITE; borderBg = COLOR_BLACK;
+            break;
+        case ColorTheme::FOREST:
+            lightBg = COLOR_GREEN; darkBg = COLOR_BLACK;
+            borderFg = COLOR_GREEN; borderBg = COLOR_BLACK;
+            break;
+        case ColorTheme::OCEAN:
+            lightBg = COLOR_CYAN; darkBg = COLOR_BLUE;
+            borderFg = COLOR_CYAN; borderBg = COLOR_BLACK;
+            break;
+        case ColorTheme::SUNSET:
+            lightBg = COLOR_YELLOW; darkBg = COLOR_RED;
+            borderFg = COLOR_YELLOW; borderBg = COLOR_BLACK;
+            break;
+        case ColorTheme::ROYAL:
+            lightBg = COLOR_MAGENTA; darkBg = COLOR_BLACK;
+            borderFg = COLOR_MAGENTA; borderBg = COLOR_BLACK;
+            break;
+    }
+
+    // Pair 1: general text
+    init_pair(1, COLOR_WHITE, COLOR_BLACK);
+    // Pair 3: cursor / selection highlight (inverted)
+    init_pair(3, COLOR_BLACK, COLOR_WHITE);
+    // Pair 4: borders, messages
+    init_pair(4, borderFg, borderBg);
+    // Pairs 5-8: piece-on-square combinations
+    // 5: white piece on light square  -> dark fg on light bg
+    init_pair(5, COLOR_BLACK, lightBg);
+    // 6: white piece on dark square   -> light fg on dark bg
+    init_pair(6, COLOR_WHITE, darkBg);
+    // 7: black piece on light square  -> dark fg on light bg
+    init_pair(7, COLOR_BLACK, lightBg);
+    // 8: black piece on dark square   -> light fg on dark bg
+    init_pair(8, COLOR_WHITE, darkBg);
+}
+
+void Display::setTheme(ColorTheme t) {
+    if (has_colors()) {
+        applyTheme(t);
+    } else {
+        theme = t;
+    }
+}
+
+ColorTheme Display::selectColorTheme() {
+    struct ThemeOption {
+        ColorTheme value;
+        const char* name;
+        const char* description;
+    };
+    const ThemeOption options[] = {
+        { ColorTheme::CLASSIC, "Classic", "Timeless white & black" },
+        { ColorTheme::FOREST,  "Forest",  "Cool green & black"     },
+        { ColorTheme::OCEAN,   "Ocean",   "Cyan & deep blue"       },
+        { ColorTheme::SUNSET,  "Sunset",  "Warm yellow & red"      },
+        { ColorTheme::ROYAL,   "Royal",   "Regal magenta & black"  },
+    };
+    const int numOptions = static_cast<int>(sizeof(options) / sizeof(options[0]));
+
+    int selected = 0;
+    while (true) {
+        // Clear the inside of the window before drawing the menu.
+        werase(gameWindow);
+        box(gameWindow, 0, 0);
+        if (has_colors()) {
+            wattron(gameWindow, COLOR_PAIR(4) | A_BOLD);
+        }
+        mvwprintw(gameWindow, 0, 2, "[ \u265F Chess Lab - Classic Edition \u265F ]");
+        if (has_colors()) {
+            wattroff(gameWindow, COLOR_PAIR(4) | A_BOLD);
+        }
+
+        mvwprintw(gameWindow, 2, 4, "Choose a board color theme:");
+        mvwprintw(gameWindow, 3, 4, "Use UP/DOWN arrows, ENTER to confirm.");
+
+        for (int i = 0; i < numOptions; ++i) {
+            int row = 5 + i;
+            if (i == selected) {
+                if (has_colors()) {
+                    wattron(gameWindow, COLOR_PAIR(3) | A_BOLD);
+                }
+                mvwprintw(gameWindow, row, 6, "> %-10s - %s", options[i].name, options[i].description);
+                if (has_colors()) {
+                    wattroff(gameWindow, COLOR_PAIR(3) | A_BOLD);
+                }
+            } else {
+                mvwprintw(gameWindow, row, 6, "  %-10s - %s", options[i].name, options[i].description);
+            }
+        }
+
+        wrefresh(gameWindow);
+
+        int ch = wgetch(gameWindow);
+        switch (ch) {
+            case KEY_UP:
+                selected = (selected - 1 + numOptions) % numOptions;
+                break;
+            case KEY_DOWN:
+                selected = (selected + 1) % numOptions;
+                break;
+            case '\n':
+            case '\r':
+            case KEY_ENTER:
+            case ' ': {
+                ColorTheme chosen = options[selected].value;
+                setTheme(chosen);
+                werase(gameWindow);
+                box(gameWindow, 0, 0);
+                if (has_colors()) {
+                    wattron(gameWindow, COLOR_PAIR(4) | A_BOLD);
+                }
+                mvwprintw(gameWindow, 0, 2, "[ \u265F Chess Lab - Classic Edition \u265F ]");
+                if (has_colors()) {
+                    wattroff(gameWindow, COLOR_PAIR(4) | A_BOLD);
+                }
+                wrefresh(gameWindow);
+                return chosen;
+            }
+            default:
+                break;
+        }
+    }
 }

@@ -12,7 +12,10 @@ void Game::start() {
     board.initialize();
     display.initialize();
     gameRunning = true;
-    
+
+    // Let the player pick a board color theme before play begins.
+    display.selectColorTheme();
+
     display.drawBoard(board);
     display.drawStatus("Use arrow keys to move, SPACE to select/move, Q to quit");
     display.drawMessage("White's turn");
