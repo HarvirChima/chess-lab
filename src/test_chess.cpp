@@ -129,7 +129,7 @@ int main() {
         testKnightMovement();
 	testRookMovement();
         testInvalidMoves();
-        testCapture();        
+        testCapture();
         std::cout << "=========================" << std::endl;
         std::cout << "All tests passed! ✓" << std::endl;
         return 0;
