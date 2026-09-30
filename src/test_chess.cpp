@@ -67,6 +67,24 @@ void testKnightMovement() {
     std::cout << "✓ Knight movement test passed" << std::endl;
 }
 
+// Added test Rook MoveMent
+
+void testRookMovement() {
+    Board board;
+    
+    // Free the rook's path by moving the pawn forward
+    board.movePiece(6, 0, 4, 0);
+    
+    // Rook can now move up column 0
+    assert(board.movePiece(7, 0, 5, 0) == true);
+    assert(board.getPiece(5, 0).getType() == PieceType::ROOK);
+    assert(board.getPiece(7, 0).isEmpty());
+    
+    std::cout << "✓ Rook movement test passed" << std::endl;
+}
+
+
+
 void testInvalidMoves() {
     Board board;
     
@@ -109,9 +127,9 @@ int main() {
         testBoardInitialization();
         testPawnMovement();
         testKnightMovement();
+	testRookMovement();
         testInvalidMoves();
-        testCapture();
-        
+        testCapture();        
         std::cout << "=========================" << std::endl;
         std::cout << "All tests passed! ✓" << std::endl;
         return 0;
